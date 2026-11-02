@@ -52,7 +52,7 @@ async def main():
     for number, task in enumerate(tasks, start=1):
         print(f"generating image {number}/{len(tasks)}...", flush=True)
         prompt = f"action: {task.action}\nexpected result: {task.expected_state}"
-        await asyncio.to_thread(generateimage, prompt, server, output / f"step{number}.png")
+        await asyncio.to_thread(generate_image, prompt, server, output / f"step{number}.png")
 
     print(f"images saved to {output}")
 
