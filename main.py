@@ -17,9 +17,9 @@ async def generate_steps(tasks, server, output):
 
     #comfyui requests run in worker threads while the chat loop uses asyncio
     for number, task in enumerate(tasks, start=1):
-        # describe only this step, so future steps do not appear too early
+        # give the image model a specific change and the result it must show
         destination = output / f"step_{number}.png"
-        prompt = f"Action: {task.action}\nExpected result: {task.expected_state}"
+        prompt = f"Required change: {task.action}\nResult to show: {task.expected_state}"
 
         # keep the prompts beside the images so they are easy to inspect
         prompts.append(f"Step {number}\n{prompt}")

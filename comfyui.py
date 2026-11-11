@@ -2,6 +2,7 @@
 
 import json
 import mimetypes
+import random
 import time
 from pathlib import Path, PurePosixPath
 
@@ -13,8 +14,8 @@ def generate_image(task, server, destination):
     workflow_file = Path(__file__).with_name("workflow_api.json")
     workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
 
-    # node 74 holds the positive prompt
-    workflow["74"]["inputs"]["text"] = "Simple instructional illustration on a plain background. " + task
+    # node 74 puts this step's result before the general drawing instructions
+    workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
     send_workflow(workflow, server, destination)
 
 #upload a local image and return its filename on the comfyui server
@@ -49,14 +50,11 @@ def generate_next_image(task, reference_image, server, destination):
     # node 80 loads the uploaded previous image using its server filename
     workflow["80"]["inputs"]["image"] = reference_image
 
-    # node 74 describes what should change and what should stay consistent
-    workflow["74"]["inputs"]["text"] = (
-        "Edit the reference image into the requested instructional state. "
-        "Preserve the same objects, materials, colors, illustration style, lighting, "
-        "background, and camera viewpoint wherever the requested action allows. "
-        "Change the object's shape, arrangement, or contents as required. "
-        "Show one resulting scene, without extra panels or labels.\n" + task
-    )
+    # use a new random seed for each image-editing call
+    workflow["73"]["inputs"]["noise_seed"] = random.randint(0, 2**32 - 1)
+
+    # put the actual change first; the workflow guidance preserves unaffected details
+    workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
     send_workflow(workflow, server, destination)
 
 #queue either workflow, wait for its result, and save the image

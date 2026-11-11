@@ -173,7 +173,7 @@
         }
       },
       "widgets_values": [
-        5
+        7
       ],
       "title": "CFG guidance"
     },
@@ -421,7 +421,7 @@
         }
       },
       "widgets_values": [
-        "blurry, low detail, distorted anatomy, watermark, unreadable text"
+        "blurry, low detail, distorted anatomy, text, words, letters, numbers, labels, captions, annotations, typography, logos, signatures, watermarks"
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -633,9 +633,9 @@
       },
       "widgets_values": [
         42,
-        "fixed"
+        "randomize"
       ],
-      "title": "Fixed seed"
+      "title": "Seed (randomize per edit)"
     },
     {
       "id": 74,
@@ -686,7 +686,7 @@
         }
       },
       "widgets_values": [
-        "Edit the reference image to show the next instructional step. Preserve the same objects, colors, style, background, and camera viewpoint while applying the requested changes."
+        "Show the required change and result as a clearly different procedural state when the action has a visible effect. Change the affected objects, parts, connections, layout, or interface as needed; preserve only unaffected details and visual style. Prioritize the requested result over the previous arrangement. Remove any existing words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks from the reference. Do not render any new text anywhere in the image, including on packaging or interfaces. Explain the step through shapes, positions, and visible changes in one clear, text-free resulting view. Cosmetic variation alone does not count as completing a step. For nonvisual steps, retain the truthful observable state without inventing proof of success."
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -1012,7 +1012,7 @@
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "# FLUX.2 Klein Base 9B: image + text editing\n\n1. Choose your source image in Reference image (LoadImage).\n2. Describe the desired resulting scene in Edit instruction / target state.\n3. Queue the workflow. Euler, 20 steps, CFG 5, fixed seed 42 are the starting settings.\n\nThe image is resized to about 1 MP with dimensions divisible by 16. Its VAE-encoded latent guides both positive and negative conditioning. Sampling starts from an empty output latent, as in ComfyUI's native FLUX.2 edit workflow.\n\nThe Python app uses workflow_edit_api.json automatically after generating step one. Each later step edits the previous image using that step's text: image 2 uses image 1, image 3 uses image 2, and so on. Edit the API JSON to change the app's settings; saving this canvas alone does not change them.\n\nRequired models are the same as the text-to-image workflow. All nodes are built into current ComfyUI."
+        "# FLUX.2 Klein Base 9B: image + text editing\n\n1. Choose the previous completed image in Reference image.\n2. Put 'Required change: ...' and 'Result to show: ...' at the top of Edit instruction / target state. Keep the general no-text instructions underneath.\n3. Queue the workflow. Use each new result as the reference for the next step.\n\nSettings: Euler, 20 steps, CFG 7, about 1 megapixel. The seed control randomizes between queued edits. The Python app also gives every editing call a fresh random seed; its first text-only image uses seed 42.\n\nAll images must be text-free, including packaging and interfaces. Edits remove existing writing from the reference. Keep written procedure details outside the images.\n\nThis canvas mirrors workflow_edit_api.json, including models, prompts, sampling, and image-reference connections. The app uses workflow_api.json for image one and workflow_edit_api.json for later images. Update the API file too if you change this canvas manually.\n\nAll nodes are built into current ComfyUI. Model files and setup instructions are listed in README.md."
       ]
     }
   ],
