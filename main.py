@@ -1,63 +1,61 @@
-#chat with the reasoning agent, then send the finished tasks to comfyui
+# chat with the reasoning agent, then send the finished tasks to ComfyUI
 
 import asyncio
 from datetime import datetime
 from pathlib import Path
 
 from agents import ChatReply, create_agent
-from comfyui import generate_image, generate_next_image
+from comfyui import generate_image, generate_next_image, upload_reference
 
-from prompt_splitter import create_split, SplitResult
 
-#[SINGLE AGENT - NO SPLIT, ONE AGENT DOES ALL STEPS]
-async def run_single(long, server, output, num_steps): 
+async def generate_steps(tasks, server, output):
+    # the chat agent has already split the plan into ordered tasks
+    output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    step_paths = []
     previous_image = None
+    prompts = []
 
-    print(f"single agent: generating {num_steps} images...", flush=True)
+    #comfyui requests run in worker threads while the chat loop uses asyncio
+    for number, task in enumerate(tasks, start=1):
+        # give the image model a specific change and the result it must show
+        destination = output / f"step_{number}.png"
+        prompt = f"""
+        Required change: {task.action}
+        
+        Result to show: {task.expected_state}
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+        """.strip()
 
-    for i in range(1, num_steps+1):
-        destination = output / f"step_{i}.png"
+        # keep the prompts beside the images so they are easy to inspect
+        prompts.append(f"Step {number}\n{prompt}")
+        (output / "prompts.txt").write_text("\n\n".join(prompts), encoding="utf-8")
+        print(f"generating image {number}/{len(tasks)}...", flush=True)
 
-        if i == 1:
-            # first image = text only always
-            await asyncio.to_thread(generate_image, long, server, destination)
+        if previous_image is None:
+            # the first image needs only text
+            await asyncio.to_thread(generate_image, prompt, server, destination)
         else:
-            # second image = every image after will include text + prev image 
-            await asyncio.to_thread(generate_next_image, long, previous_image, server, destination)
+            # upload the last completed image and edit it using this step's prompt
+            reference_image = await asyncio.to_thread(upload_reference, previous_image, server)
+            await asyncio.to_thread(generate_next_image, prompt, reference_image, server, destination)
 
+        # this result becomes the reference for the next step
         previous_image = destination
-        step_paths.append(destination)
-
-    return step_paths
-
-#WIP WIP WIP!!!!!!
-#[MULTI AGENT - YES SPLIT, EACH AGENT FOCUSES ON A SINGULAR STEP]
-async def run_multi(long, server, output):
-    output.mkdir(parents=True, exist_ok=True)
-
-    #split the long instruction into small instructions 
-    splitter = create_split()
-    print("multi prep: splitting instructions...", flush=True)
-    result = await splitter.run(long, expected_output=SplitResult)
-    tasks = result.output_structured.prompts
-
-    #create a prompts file so we see what prompt is being fed to create each image
-    prompts_file = output / "prompts.txt"
-    prompts_file.write_text(
-        "\n\n".join(f"Step {i}.) {p}" for i, p in enumerate(tasks, start=1)),
-        encoding="utf-8"
-    )
 
 
 async def main():
-    #create this once, outside the loop, so the conversation is remembered
+    # create one agent so it remembers the whole conversation
     agent = create_agent()
     print("describe your task below. type quit to leave.")
 
     while True:
-        #every message goes to the same reasoning agent
+        # every message goes to the same reasoning agent
         message = input("you: ").strip()
         if message.lower() in ("quit", "exit"):
             return
@@ -65,42 +63,36 @@ async def main():
             continue
 
         print("thinking...", flush=True)
-        result = await agent.run(
-            message, expected_output=ChatReply, max_iterations=5, total_max_retries=2
-        )
+        result = await agent.run(message, expected_output=ChatReply, max_iterations=5, total_max_retries=2)
         answer = ChatReply.model_validate(result.output_structured)
         print(f"agent: {answer.reply}", flush=True)
 
-        #no tasks means the reply is a question; loop back for the user's answer
-        #a finished task list ends the chat and moves on to image generation
+        # an empty task list means the agent still needs an answer
+        # a finished task list moves the program on to image generation
         if answer.tasks:
             tasks = answer.tasks
             break
 
-    #show the consolidated plan before sending it to the image worker
+    # show the finished plan before generating images
     for number, task in enumerate(tasks, start=1):
         print(f"{number}. {task.action}")
         print(f"   expected: {task.expected_state}")
-    
-    #this is the entire re-interpreted plan from above that we'll feed to single/multi
-    long_instruction = "\n".join(f"{t.action} -> {t.expected_state}" for t in tasks)
 
-    #ask for the image server only after the conversation is complete
+    # ask for the image server after the conversation is complete
     server = input("comfyui address [http://127.0.0.1:8188]: ").strip()
     if not server:
         server = "http://127.0.0.1:8188"
 
-    #keep each run's images together without replacing earlier runs
+    # keep each run's images together without replacing earlier runs
     output = Path(__file__).with_name("output") / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-    output.mkdir(parents=True)
 
-    #run single agent  
-    single = await run_single(long_instruction, server, output/"single", len(tasks))
-    print(f"Single agent complete. Images saved to {output / 'single'}")
+    # use the chat agent's task list directly to generate the guide
+    await generate_steps(tasks, server, output)
+    print(f"images saved to {output}")
 
 
 if __name__ == "__main__":
-    #beeai uses async calls, so asyncio starts the main function
+    # BeeAI uses async calls, so asyncio starts the main function
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, EOFError):
