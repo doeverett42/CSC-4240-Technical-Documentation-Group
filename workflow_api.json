@@ -16,7 +16,7 @@
   "63": {
     "class_type": "CFGGuider",
     "inputs": {
-      "cfg": 5.0,
+      "cfg": 7.0,
       "model": [
         "70",
         0
@@ -80,7 +80,7 @@
   "67": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "blurry, low detail, distorted anatomy, watermark, unreadable text",
+      "text": "blurry, low detail, distorted anatomy, text, words, letters, numbers, labels, captions, annotations, typography, logos, signatures, watermarks",
       "clip": [
         "71",
         0
@@ -117,7 +117,7 @@
   "74": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "A cinematic photograph of a small glass greenhouse in a misty forest at sunrise, warm light glowing from inside, wet leaves, realistic textures, soft volumetric rays, balanced composition",
+      "text": "Create one clear, text-free instructional illustration or interface view showing the specified result. Make the target objects, components, or controls easy to distinguish and the result easy to inspect. Show only this step's resulting state, with an uncluttered setting appropriate to the task. Do not render any words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks anywhere in the image. Keep packaging, surfaces, and interfaces unlettered. Explain the step through shapes, positions, and visible changes. Follow the supplied details without adding future actions or inventing indicators of success.",
       "clip": [
         "71",
         0

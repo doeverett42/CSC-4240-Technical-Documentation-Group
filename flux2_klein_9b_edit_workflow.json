@@ -1,15 +1,15 @@
 {
-  "id": "ac934517-dba4-4d0a-bfec-adcb1fcc5e9c",
+  "id": "af963f5b-8354-4440-9de8-431ec5b668ea",
   "revision": 0,
-  "last_node_id": 76,
-  "last_link_id": 153,
+  "last_node_id": 90,
+  "last_link_id": 25,
   "nodes": [
     {
       "id": 61,
       "type": "KSamplerSelect",
       "pos": [
-        100,
-        -60
+        160,
+        170
       ],
       "size": [
         270,
@@ -21,11 +21,10 @@
       "inputs": [],
       "outputs": [
         {
-          "localized_name": "SAMPLER",
           "name": "SAMPLER",
           "type": "SAMPLER",
           "links": [
-            144
+            8
           ]
         }
       ],
@@ -49,49 +48,46 @@
       "widgets_values": [
         "euler"
       ],
-      "title": "Sampler algorithm"
+      "title": "Sampler"
     },
     {
       "id": 62,
       "type": "Flux2Scheduler",
       "pos": [
-        100,
-        120
+        160,
+        340
       ],
       "size": [
         270,
         170
       ],
       "flags": {},
-      "order": 1,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "width",
           "name": "width",
           "type": "INT",
+          "link": 1,
           "widget": {
             "name": "width"
-          },
-          "link": 137
+          }
         },
         {
-          "localized_name": "height",
           "name": "height",
           "type": "INT",
+          "link": 2,
           "widget": {
             "name": "height"
-          },
-          "link": 138
+          }
         }
       ],
       "outputs": [
         {
-          "localized_name": "SIGMAS",
           "name": "SIGMAS",
           "type": "SIGMAS",
           "links": [
-            145
+            9
           ]
         }
       ],
@@ -117,49 +113,45 @@
         1024,
         1024
       ],
-      "title": "FLUX.2 schedule + steps"
+      "title": "FLUX.2 steps / schedule"
     },
     {
       "id": 63,
       "type": "CFGGuider",
       "pos": [
-        100,
-        -280
+        160,
+        -240
       ],
       "size": [
         270,
-        160
+        150
       ],
       "flags": {},
-      "order": 2,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
-          "link": 139
+          "link": 3
         },
         {
-          "localized_name": "positive",
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 140
+          "link": 4
         },
         {
-          "localized_name": "negative",
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 141
+          "link": 5
         }
       ],
       "outputs": [
         {
-          "localized_name": "GUIDER",
           "name": "GUIDER",
           "type": "GUIDER",
           "links": [
-            143
+            7
           ]
         }
       ],
@@ -181,7 +173,7 @@
         }
       },
       "widgets_values": [
-        5.0
+        7
       ],
       "title": "CFG guidance"
     },
@@ -189,59 +181,52 @@
       "id": 64,
       "type": "SamplerCustomAdvanced",
       "pos": [
-        470,
+        520,
         -100
       ],
       "size": [
-        230,
-        420
+        240,
+        250
       ],
       "flags": {},
-      "order": 3,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "noise",
           "name": "noise",
           "type": "NOISE",
-          "link": 142
+          "link": 6
         },
         {
-          "localized_name": "guider",
           "name": "guider",
           "type": "GUIDER",
-          "link": 143
+          "link": 7
         },
         {
-          "localized_name": "sampler",
           "name": "sampler",
           "type": "SAMPLER",
-          "link": 144
+          "link": 8
         },
         {
-          "localized_name": "sigmas",
           "name": "sigmas",
           "type": "SIGMAS",
-          "link": 145
+          "link": 9
         },
         {
-          "localized_name": "latent_image",
           "name": "latent_image",
           "type": "LATENT",
-          "link": 146
+          "link": 10
         }
       ],
       "outputs": [
         {
-          "localized_name": "output",
           "name": "output",
           "type": "LATENT",
           "links": [
-            147
+            11
           ]
         },
         {
-          "localized_name": "denoised_output",
           "name": "denoised_output",
           "type": "LATENT",
           "links": []
@@ -265,44 +250,40 @@
         }
       },
       "widgets_values": [],
-      "title": "Run sampler"
+      "title": "Run image edit"
     },
     {
       "id": 65,
       "type": "VAEDecode",
       "pos": [
-        780,
+        820,
         -80
       ],
       "size": [
-        230,
+        220,
         100
       ],
       "flags": {},
-      "order": 4,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "samples",
           "name": "samples",
           "type": "LATENT",
-          "link": 147
+          "link": 11
         },
         {
-          "localized_name": "vae",
           "name": "vae",
           "type": "VAE",
-          "link": 148
+          "link": 12
         }
       ],
       "outputs": [
         {
-          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
-          "slot_index": 0,
           "links": [
-            153
+            17
           ]
         }
       ],
@@ -323,49 +304,47 @@
           "input_ue_unconnectable": {}
         }
       },
-      "widgets_values": []
+      "widgets_values": [],
+      "title": "Decode image"
     },
     {
       "id": 66,
       "type": "EmptyFlux2LatentImage",
       "pos": [
-        -430,
-        520
+        160,
+        590
       ],
       "size": [
         270,
         170
       ],
       "flags": {},
-      "order": 5,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "width",
           "name": "width",
           "type": "INT",
+          "link": 13,
           "widget": {
             "name": "width"
-          },
-          "link": 149
+          }
         },
         {
-          "localized_name": "height",
           "name": "height",
           "type": "INT",
+          "link": 14,
           "widget": {
             "name": "height"
-          },
-          "link": 150
+          }
         }
       ],
       "outputs": [
         {
-          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            146
+            10
           ]
         }
       ],
@@ -390,42 +369,40 @@
         1024,
         1024,
         1
-      ]
+      ],
+      "title": "Output latent"
     },
     {
       "id": 67,
       "type": "CLIPTextEncode",
       "pos": [
-        -430,
-        10
+        -720,
+        100
       ],
       "size": [
-        430,
-        140
+        440,
+        170
       ],
       "flags": {},
-      "order": 6,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
-          "link": 152
+          "link": 15
         }
       ],
       "outputs": [
         {
-          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
-          "slot_index": 0,
           "links": [
-            141
+            23
           ]
         }
       ],
-      "title": "Negative prompt (optional)",
+      "title": "Negative prompt",
       "properties": {
         "Node name for S&R": "CLIPTextEncode",
         "cnr_id": "comfy-core",
@@ -444,219 +421,32 @@
         }
       },
       "widgets_values": [
-        "blurry, low detail, distorted anatomy, watermark, unreadable text"
+        "blurry, low detail, distorted anatomy, text, words, letters, numbers, labels, captions, annotations, typography, logos, signatures, watermarks"
       ],
       "color": "#322",
       "bgcolor": "#533"
     },
     {
-      "id": 68,
-      "type": "PrimitiveInt",
-      "pos": [
-        -850,
-        390
-      ],
-      "size": [
-        270,
-        110
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "value",
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "INT",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            137,
-            149
-          ]
-        }
-      ],
-      "title": "Width (multiple of 16)",
-      "properties": {
-        "Node name for S&R": "PrimitiveInt",
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        1024,
-        "fixed"
-      ]
-    },
-    {
-      "id": 69,
-      "type": "PrimitiveInt",
-      "pos": [
-        -850,
-        550
-      ],
-      "size": [
-        270,
-        110
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "value",
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "INT",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            138,
-            150
-          ]
-        }
-      ],
-      "title": "Height (multiple of 16)",
-      "properties": {
-        "Node name for S&R": "PrimitiveInt",
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        1024,
-        "fixed"
-      ]
-    },
-    {
-      "id": 73,
-      "type": "RandomNoise",
-      "pos": [
-        -430,
-        260
-      ],
-      "size": [
-        270,
-        110
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "noise_seed",
-          "name": "noise_seed",
-          "type": "INT",
-          "widget": {
-            "name": "noise_seed"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "NOISE",
-          "name": "NOISE",
-          "type": "NOISE",
-          "links": [
-            142
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RandomNoise",
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        42,
-        "fixed"
-      ],
-      "title": "Seed / noise"
-    },
-    {
       "id": 70,
       "type": "UNETLoader",
       "pos": [
-        -850,
-        -280
+        -1150,
+        -240
       ],
       "size": [
         370,
-        140
+        110
       ],
       "flags": {},
-      "order": 9,
+      "order": 5,
       "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "unet_name",
-          "name": "unet_name",
-          "type": "COMBO",
-          "widget": {
-            "name": "unet_name"
-          },
-          "link": null
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            139
+            3
           ]
         }
       ],
@@ -688,41 +478,30 @@
         "flux-2-klein-base-9b-fp8.safetensors",
         "default"
       ],
-      "title": "1 - FLUX.2 Klein 9B diffusion model"
+      "title": "FLUX.2 Klein Base 9B"
     },
     {
       "id": 71,
       "type": "CLIPLoader",
       "pos": [
-        -850,
-        -70
+        -1150,
+        -60
       ],
       "size": [
         370,
-        180
+        150
       ],
       "flags": {},
-      "order": 10,
+      "order": 6,
       "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "clip_name",
-          "name": "clip_name",
-          "type": "COMBO",
-          "widget": {
-            "name": "clip_name"
-          },
-          "link": null
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "localized_name": "CLIP",
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            151,
-            152
+            15,
+            16
           ]
         }
       ],
@@ -755,40 +534,30 @@
         "flux2",
         "default"
       ],
-      "title": "2 - Qwen3 8B text encoder"
+      "title": "Qwen3 8B text encoder"
     },
     {
       "id": 72,
       "type": "VAELoader",
       "pos": [
-        -850,
-        140
+        -1150,
+        160
       ],
       "size": [
-        350,
+        370,
         110
       ],
       "flags": {},
-      "order": 11,
+      "order": 8,
       "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "vae_name",
-          "name": "vae_name",
-          "type": "COMBO",
-          "widget": {
-            "name": "vae_name"
-          },
-          "link": null
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "localized_name": "VAE",
           "name": "VAE",
           "type": "VAE",
           "links": [
-            148
+            12,
+            20
           ]
         }
       ],
@@ -819,51 +588,86 @@
       "widgets_values": [
         "full_encoder_small_decoder.safetensors"
       ],
-      "title": "3 - FLUX.2 VAE"
+      "title": "FLUX.2 VAE"
+    },
+    {
+      "id": 73,
+      "type": "RandomNoise",
+      "pos": [
+        160,
+        0
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        42,
+        "randomize"
+      ],
+      "title": "Seed (randomize per edit)"
     },
     {
       "id": 74,
       "type": "CLIPTextEncode",
       "pos": [
-        -430,
-        -280
+        -720,
+        -240
       ],
       "size": [
-        430,
-        280
+        440,
+        270
       ],
       "flags": {},
-      "order": 13,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
-          "link": 151
-        },
-        {
-          "localized_name": "text",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": null
+          "link": 16
         }
       ],
       "outputs": [
         {
-          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
-          "slot_index": 0,
           "links": [
-            140
+            21
           ]
         }
       ],
-      "title": "Positive prompt",
+      "title": "Edit instruction / target state",
       "properties": {
         "Node name for S&R": "CLIPTextEncode",
         "cnr_id": "comfy-core",
@@ -882,7 +686,7 @@
         }
       },
       "widgets_values": [
-        "A cinematic photograph of a small glass greenhouse in a misty forest at sunrise, warm light glowing from inside, wet leaves, realistic textures, soft volumetric rays, balanced composition"
+        "Show the required change and result as a clearly different procedural state when the action has a visible effect. Change the affected objects, parts, connections, layout, or interface as needed; preserve only unaffected details and visual style. Prioritize the requested result over the previous arrangement. Remove any existing words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks from the reference. Do not render any new text anywhere in the image, including on packaging or interfaces. Explain the step through shapes, positions, and visible changes in one clear, text-free resulting view. Cosmetic variation alone does not count as completing a step. For nonvisual steps, retain the truthful observable state without inventing proof of success."
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -891,30 +695,24 @@
       "id": 75,
       "type": "SaveImage",
       "pos": [
-        1060,
-        -120
+        1100,
+        -100
       ],
       "size": [
-        520,
-        560
+        480,
+        550
       ],
       "flags": {},
-      "order": 14,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 153
+          "link": 17
         }
       ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
+      "outputs": [],
       "properties": {
         "Node name for S&R": "SaveImage",
         "cnr_id": "comfy-core",
@@ -933,58 +731,310 @@
         }
       },
       "widgets_values": [
-        "Flux2_Klein_9B_Test"
+        "Flux2_Klein_9B_Edit"
+      ],
+      "title": "Save result"
+    },
+    {
+      "id": 80,
+      "flags": {},
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core"
+      },
+      "type": "LoadImage",
+      "order": 1,
+      "mode": 0,
+      "pos": [
+        -1150,
+        400
+      ],
+      "size": [
+        350,
+        320
+      ],
+      "title": "Reference image",
+      "widgets_values": [
+        "reference.png",
+        "image"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
       ]
     },
     {
-      "id": 76,
-      "type": "MarkdownNote",
+      "id": 81,
+      "flags": {},
+      "properties": {
+        "Node name for S&R": "ImageScaleToTotalPixels",
+        "cnr_id": "comfy-core"
+      },
+      "type": "ImageScaleToTotalPixels",
+      "order": 2,
+      "mode": 0,
       "pos": [
-        -850,
-        760
+        -720,
+        460
       ],
       "size": [
-        1430,
-        520
+        300,
+        160
+      ],
+      "title": "Reference size (1 MP, multiples of 16)",
+      "widgets_values": [
+        "lanczos",
+        1,
+        16
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            19,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "flags": {},
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "cnr_id": "comfy-core"
+      },
+      "type": "VAEEncode",
+      "order": 9,
+      "mode": 0,
+      "pos": [
+        -360,
+        600
+      ],
+      "size": [
+        230,
+        100
+      ],
+      "title": "Encode reference",
+      "widgets_values": [],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 19
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            22,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "flags": {},
+      "properties": {
+        "Node name for S&R": "ReferenceLatent",
+        "cnr_id": "comfy-core"
+      },
+      "type": "ReferenceLatent",
+      "order": 10,
+      "mode": 0,
+      "pos": [
+        -170,
+        -240
+      ],
+      "size": [
+        250,
+        100
+      ],
+      "title": "Positive + image reference",
+      "widgets_values": [],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 21
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "flags": {},
+      "properties": {
+        "Node name for S&R": "ReferenceLatent",
+        "cnr_id": "comfy-core"
+      },
+      "type": "ReferenceLatent",
+      "order": 12,
+      "mode": 0,
+      "pos": [
+        -170,
+        -50
+      ],
+      "size": [
+        250,
+        100
+      ],
+      "title": "Negative + image reference",
+      "widgets_values": [],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 23
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "flags": {},
+      "properties": {
+        "Node name for S&R": "GetImageSize",
+        "cnr_id": "comfy-core"
+      },
+      "type": "GetImageSize",
+      "order": 3,
+      "mode": 0,
+      "pos": [
+        -360,
+        800
+      ],
+      "size": [
+        230,
+        110
+      ],
+      "title": "Shared image dimensions",
+      "widgets_values": [],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            1,
+            13
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            2,
+            14
+          ]
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "type": "MarkdownNote",
+      "pos": [
+        -1150,
+        1000
+      ],
+      "size": [
+        1500,
+        350
       ],
       "flags": {},
-      "order": 0,
+      "order": 19,
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "properties": {
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
+      "properties": {},
       "widgets_values": [
-        "# FLUX.2 Klein 9B — learning workflow\n\nThis is the current FLUX.2 setup that uses the **Qwen3 8B text encoder**.\n\nStart here (base model): **20 steps · CFG 5 · Euler · 1024×1024**.\n\nChange one variable at a time and reuse the same fixed seed:\n1. Prompt wording\n2. Steps: try 12, 20, 28\n3. CFG: try 3.5, 5, 6.5\n4. Sampler: start with Euler; compare other available samplers afterward\n5. Resolution: keep width/height multiples of 16\n\nFor new variations, switch RandomNoise from **fixed** to **randomize**.\n\nRequired files:\n- `models/diffusion_models/flux-2-klein-base-9b-fp8.safetensors`\n- `models/text_encoders/qwen_3_8b_fp8mixed.safetensors`\n- `models/vae/full_encoder_small_decoder.safetensors`\n\nIf a model name is red or unavailable, select the matching filename installed on your system. Update ComfyUI if FLUX.2 nodes are missing."
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
+        "# FLUX.2 Klein Base 9B: image + text editing\n\n1. Choose the previous completed image in Reference image.\n2. Put 'Required change: ...' and 'Result to show: ...' at the top of Edit instruction / target state. Keep the general no-text instructions underneath.\n3. Queue the workflow. Use each new result as the reference for the next step.\n\nSettings: Euler, 20 steps, CFG 7, about 1 megapixel. The seed control randomizes between queued edits. The Python app also gives every editing call a fresh random seed; its first text-only image uses seed 42.\n\nAll images must be text-free, including packaging and interfaces. Edits remove existing writing from the reference. Keep written procedure details outside the images.\n\nThis canvas mirrors workflow_edit_api.json, including models, prompts, sampling, and image-reference connections. The app uses workflow_api.json for image one and workflow_edit_api.json for later images. Update the API file too if you change this canvas manually.\n\nAll nodes are built into current ComfyUI. Model files and setup instructions are listed in README.md."
+      ]
     }
   ],
   "links": [
     [
-      137,
-      68,
+      1,
+      85,
       0,
       62,
       0,
       "INT"
     ],
     [
-      138,
-      69,
-      0,
+      2,
+      85,
+      1,
       62,
       1,
       "INT"
     ],
     [
-      139,
+      3,
       70,
       0,
       63,
@@ -992,23 +1042,23 @@
       "MODEL"
     ],
     [
-      140,
-      74,
+      4,
+      83,
       0,
       63,
       1,
       "CONDITIONING"
     ],
     [
-      141,
-      67,
+      5,
+      84,
       0,
       63,
       2,
       "CONDITIONING"
     ],
     [
-      142,
+      6,
       73,
       0,
       64,
@@ -1016,7 +1066,7 @@
       "NOISE"
     ],
     [
-      143,
+      7,
       63,
       0,
       64,
@@ -1024,7 +1074,7 @@
       "GUIDER"
     ],
     [
-      144,
+      8,
       61,
       0,
       64,
@@ -1032,7 +1082,7 @@
       "SAMPLER"
     ],
     [
-      145,
+      9,
       62,
       0,
       64,
@@ -1040,7 +1090,7 @@
       "SIGMAS"
     ],
     [
-      146,
+      10,
       66,
       0,
       64,
@@ -1048,7 +1098,7 @@
       "LATENT"
     ],
     [
-      147,
+      11,
       64,
       0,
       65,
@@ -1056,7 +1106,7 @@
       "LATENT"
     ],
     [
-      148,
+      12,
       72,
       0,
       65,
@@ -1064,23 +1114,23 @@
       "VAE"
     ],
     [
-      149,
-      68,
+      13,
+      85,
       0,
       66,
       0,
       "INT"
     ],
     [
-      150,
-      69,
-      0,
+      14,
+      85,
+      1,
       66,
       1,
       "INT"
     ],
     [
-      152,
+      15,
       71,
       0,
       67,
@@ -1088,7 +1138,7 @@
       "CLIP"
     ],
     [
-      151,
+      16,
       71,
       0,
       74,
@@ -1096,10 +1146,74 @@
       "CLIP"
     ],
     [
-      153,
+      17,
       65,
       0,
       75,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      80,
+      0,
+      81,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      81,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      72,
+      0,
+      82,
+      1,
+      "VAE"
+    ],
+    [
+      21,
+      74,
+      0,
+      83,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      22,
+      82,
+      0,
+      83,
+      1,
+      "LATENT"
+    ],
+    [
+      23,
+      67,
+      0,
+      84,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      24,
+      82,
+      0,
+      84,
+      1,
+      "LATENT"
+    ],
+    [
+      25,
+      81,
+      0,
+      85,
       0,
       "IMAGE"
     ]
@@ -1108,13 +1222,12 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.72,
+      "scale": 0.6,
       "offset": [
-        -40,
-        190
+        1250,
+        350
       ]
-    },
-    "frontendVersion": "1.30.7"
+    }
   },
   "version": 0.4
 }

@@ -1,100 +1,104 @@
-"""send a task to a remote comfyui server and download the finished image."""
+"""send tasks to ComfyUI and download the generated images."""
 
 import json
+import mimetypes
+import random
 import time
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import requests
 
 
 def generate_image(task, server, destination):
-    # load the supplied workflow in the format comfyui's api accepts
+    # load the text-only workflow for the first image
     workflow_file = Path(__file__).with_name("workflow_api.json")
     workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
 
-    # node 74 holds the positive prompt; the task goes straight into it
-    workflow["74"]["inputs"]["text"] = "Simple instructional illustration on a plain background. " + task
-    workflow["75"]["inputs"]["filename_prefix"] = "instructions/" + destination.stem
+    # node 74 puts this step's result before the general drawing instructions
+    workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
+    send_workflow(workflow, server, destination)
 
-    # /prompt queues the workflow on the remote computer
-    # comfyui runs the image model there, not in this python program
-    server = server.rstrip("/")
-    response = requests.post(server + "/prompt", json={"prompt": workflow}, timeout=30)
+#upload a local image and return its filename on the comfyui server
+def upload_reference(image, server):
+    image = Path(image)
+    mime_type = mimetypes.guess_type(image.name)[0] or "application/octet-stream"
+
+    # send the image itself; a local filename is not enough for a remote server
+    with image.open("rb") as image_file:
+        response = requests.post(
+            server.rstrip("/") + "/upload/image",
+            files={"image": (image.name, image_file, mime_type)},
+            data={
+                "type": "input",
+                "subfolder": "instructions/references",
+                "overwrite": "false"
+            },
+            timeout=60
+        )
     response.raise_for_status()
+    uploaded = response.json()
+
+    # ComfyUI may rename the upload; use its returned name and forward slashes
+    return str(PurePosixPath(uploaded.get("subfolder", "")) / uploaded["name"])
+
+
+def generate_next_image(task, reference_image, server, destination):
+    # load the image-and-text workflow for every step after the first
+    workflow_file = Path(__file__).with_name("workflow_edit_api.json")
+    workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
+
+    # node 80 loads the uploaded previous image using its server filename
+    workflow["80"]["inputs"]["image"] = reference_image
+
+    # use a new random seed for each image-editing call
+    workflow["73"]["inputs"]["noise_seed"] = random.randint(0, 2**32 - 1)
+
+    # put the actual change first; the workflow guidance preserves unaffected details
+    workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
+    send_workflow(workflow, server, destination)
+
+#queue either workflow, wait for its result, and save the image
+def send_workflow(workflow, server, destination):
+    server = server.rstrip("/")
+    destination = Path(destination)
+
+    # node 75 saves the image on the ComfyUI server
+    workflow["75"]["inputs"]["filename_prefix"] = "instructions/" + destination.stem
+    response = requests.post(server + "/prompt", json={"prompt": workflow}, timeout=30)
+    try:
+        response.raise_for_status()
+    except requests.HTTPError as error:
+        # include node errors so missing models or nodes are easy to identify
+        raise RuntimeError(f"ComfyUI rejected the workflow: {response.text}") from error
     prompt_id = response.json()["prompt_id"]
 
-    # check the job's history once a second, allowing up to 15 minutes
+    # keep the job ID and settings beside the image, even if the job times out
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    record = {"prompt_id": prompt_id, "prompt": workflow}
+    destination.with_suffix(".json").write_text(json.dumps(record, indent=2), encoding="utf-8")
+
+    # check the job history once a second, allowing up to 15 minutes
     deadline = time.monotonic() + 900
     while time.monotonic() < deadline:
         response = requests.get(server + "/history/" + prompt_id, timeout=30)
         response.raise_for_status()
         job = response.json().get(prompt_id, {})
 
-        # stop if comfyui reports a failure instead of waiting for an image
+        # stop if ComfyUI reports an error instead of waiting for an image
         if job.get("status", {}).get("status_str") == "error":
-            raise RuntimeError(f"comfyui failed: {job['status'].get('messages')}")
+            raise RuntimeError(f"ComfyUI failed: {job['status'].get('messages')}")
 
-        # node 75 saves the image; its history entry tells us where to find it
+        # node 75's history entry tells us where the completed image was saved
         images = job.get("outputs", {}).get("75", {}).get("images", [])
         if images:
-            image = images[0]
-            response = requests.get(server + "/view", params=image, timeout=60)
+            response = requests.get(server + "/view", params=images[0], timeout=60)
             response.raise_for_status()
 
-            # copy the image from the remote server into this run's output folder
+            # copy the finished image from the server into this run's folder
             destination.write_bytes(response.content)
             return
 
         time.sleep(1)
 
-    raise TimeoutError("comfyui took too long; the remote job may still be running")
-
-#generate_next_image is just generate_image but for the next image [WE NEED PREV IMAGES NOW]
-def generate_next_image(task, previous_image, server, destination):
-    # load the supplied workflow in the format comfyui's api accepts
-    workflow_file = Path(__file__).with_name("workflow_api.json")
-    workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
-
-    # node 74 holds the positive prompt
-    workflow["74"]["inputs"]["text"] = "Simple instructional illustration on a plain background. " + task
-
-    #DAVID ADD A LOAD IMAGE NODE
-    # node 80 should be load image node 
-    workflow["80"]["inputs"]["image"] = previous_image.name
-
-    # node 75 save image node 
-    workflow["75"]["inputs"]["filename_prefix"] = "instructions/" + destination.stem
-
-    # /prompt queues the workflow on the remote computer
-    # comfyui runs the image model there, not in this python program
-    server = server.rstrip("/")
-    response = requests.post(server + "/prompt", json={"prompt": workflow}, timeout=30)
-    response.raise_for_status()
-    prompt_id = response.json()["prompt_id"]
-
-    # check the job's history once a second, allowing up to 15 minutes
-    deadline = time.monotonic() + 900
-    while time.monotonic() < deadline:
-        response = requests.get(server + "/history/" + prompt_id, timeout=30)
-        response.raise_for_status()
-        job = response.json().get(prompt_id, {})
-
-        # stop if comfyui reports a failure instead of waiting for an image
-        if job.get("status", {}).get("status_str") == "error":
-            raise RuntimeError(f"comfyui failed: {job['status'].get('messages')}")
-
-        # node 75 saves the image; its history entry tells us where to find it
-        images = job.get("outputs", {}).get("75", {}).get("images", [])
-        if images:
-            image = images[0]
-            response = requests.get(server + "/view", params=image, timeout=60)
-            response.raise_for_status()
-
-            # copy the image from the remote server into this run's output folder
-            destination.write_bytes(response.content)
-            return
-
-        time.sleep(1)
-
-    raise TimeoutError("comfyui took too long; the remote job may still be running")
-
+    # a client timeout does not cancel the job on the ComfyUI server
+    raise TimeoutError(f"ComfyUI job {prompt_id} took too long; it may still be running")
