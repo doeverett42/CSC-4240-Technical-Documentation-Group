@@ -19,7 +19,18 @@ async def generate_steps(tasks, server, output):
     for number, task in enumerate(tasks, start=1):
         # give the image model a specific change and the result it must show
         destination = output / f"step_{number}.png"
-        prompt = f"Required change: {task.action}\nResult to show: {task.expected_state}"
+        prompt = f"""
+        Required change: {task.action}
+        
+        Result to show: {task.expected_state}
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+        """.strip()
 
         # keep the prompts beside the images so they are easy to inspect
         prompts.append(f"Step {number}\n{prompt}")
