@@ -72,15 +72,28 @@ Images are instructed to contain no text, letters, numbers, labels, captions, lo
 
 The base drawing and editing instructions are stored in node `74` of the two API workflow files. `comfyui.py` puts the current step before those general instructions. You can tune the wording in the workflow files without changing the Python code.
 
-Both API workflows and the edit canvas use Euler, 20 steps, and CFG 7. The first image uses seed 42; each later image-editing call gets a new random seed. The edit canvas also randomizes its seed between queued edits. The Python app saves the actual seed in the JSON file beside each image.
+Both API workflows and both canvas workflows use Euler, 20 steps, and CFG 7. The first image uses seed 42; each later image-editing call gets a new random seed. The edit canvas also randomizes its seed between queued edits. The Python app saves the actual seed in the JSON file beside each image.
 
 Each run saves the images, `prompts.txt`, and a JSON file beside each image containing its workflow settings and ComfyUI job ID.
 
 ## Manual Testing in ComfyUI
 
+For the first image, open `flux2_klein_9b_learning_workflow.json`. At the top of **Positive prompt**, describe the required change and result to show. Keep the general no-text instructions underneath, then queue the workflow.
+
 Open `flux2_klein_9b_edit_workflow.json` in ComfyUI and choose a source in **Reference image**. At the top of **Edit instruction / target state**, add your required change and the result to show. Keep the general no-text instructions underneath, then queue the workflow.
 
-To continue, use the new image as the reference for the next step. The canvas mirrors `workflow_edit_api.json`; if you change its settings manually, update the API file too for the Python app to use them.
+To continue, use the new image as the reference for the next step.
+
+## API Files and Canvas Workflows
+
+API JSON files contain the executable nodes and inputs that Python sends to ComfyUI. Canvas workflow JSON files also contain the layout, widgets, connections, and notes needed to display the graph in the editor.
+
+| Stage | API file used by Python | Canvas file opened in ComfyUI |
+| --- | --- | --- |
+| First image from text | `workflow_api.json` | `flux2_klein_9b_learning_workflow.json` |
+| Edit the previous image | `workflow_edit_api.json` | `flux2_klein_9b_edit_workflow.json` |
+
+The settings currently match between each pair. Saving changes in the ComfyUI canvas does not automatically update the API file used by Python. Update the corresponding API file too when changing settings manually.
 
 ## Project Files
 
@@ -89,4 +102,5 @@ To continue, use the new image as the reference for the next step. The canvas mi
 - `comfyui.py`: Uploads the previous image, submits workflows, and downloads images.
 - `workflow_api.json`: Generates the first image from text.
 - `workflow_edit_api.json`: Takes a reference image and text to generate later steps.
+- `flux2_klein_9b_learning_workflow.json`: The first-image workflow in ComfyUI canvas format for manual testing.
 - `flux2_klein_9b_edit_workflow.json`: The same editing workflow in ComfyUI canvas format for manual testing.
