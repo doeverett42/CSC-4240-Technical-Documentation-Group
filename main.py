@@ -8,7 +8,7 @@ from agents import ChatReply, create_agent
 from comfyui import generate_image, generate_next_image, upload_reference
 
 
-async def generate_steps(tasks, server, output):
+async def generate_steps(tasks, end_goal, server, output):
     # the chat agent has already split the plan into ordered tasks
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
@@ -20,9 +20,15 @@ async def generate_steps(tasks, server, output):
         # give the image model a specific change and the result it must show
         destination = output / f"step_{number}.png"
         prompt = f"""
-        Required change: {task.action}
+        Required action: {task.action}
         
-        Result to show: {task.expected_state}
+        Scene shown after this action: {task.expected_state}
+
+        Overall end goal (USE ONLY FOR CONTEXT): {end_goal} 
+
+        Object to be change: {", ".join(task.changed_objects) or "None"}
+
+        Objects to preserve: {", ".join(task.unchanged_objects) or "None"}
         
         Instructions:
         - Apply required change to previous image if previous image is present.
@@ -71,6 +77,7 @@ async def main():
         # a finished task list moves the program on to image generation
         if answer.tasks:
             tasks = answer.tasks
+            end_goal = answer.end_goal
             break
 
     # show the finished plan before generating images
@@ -87,7 +94,7 @@ async def main():
     output = Path(__file__).with_name("output") / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
 
     # use the chat agent's task list directly to generate the guide
-    await generate_steps(tasks, server, output)
+    await generate_steps(tasks, end_goal, server, output)
     print(f"images saved to {output}")
 
 
