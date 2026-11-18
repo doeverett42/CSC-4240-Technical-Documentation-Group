@@ -13,7 +13,7 @@ class Task(BaseModel):
     expected_state: str
 
     changed_objects: list[str]
-    unchanged_objects: [str]
+    unchanged_objects: list[str]
 
 
 class ChatReply(BaseModel):
