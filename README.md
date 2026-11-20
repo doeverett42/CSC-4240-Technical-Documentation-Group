@@ -74,7 +74,7 @@ Images are instructed to contain no text, letters, numbers, labels, captions, lo
 
 The base drawing and editing instructions are stored in node `74` of the two API workflow files. `comfyui.py` puts the current step before those general instructions. You can tune the wording in the workflow files without changing the Python code.
 
-Both API workflows and both canvas workflows use Euler, 20 steps, and CFG 7. The first image uses seed 42; each later image-editing call gets a new random seed. The edit canvas also randomizes its seed between queued edits. The Python app saves the actual seed in the JSON file beside each image.
+Both API workflows and both canvas workflows use Euler, 20 steps, and CFG 7. The Python app draws a random seed for every image, including the first image of each run, and saves it in the JSON file beside the image.
 
 Each run saves the images, `prompts.txt`, and a JSON file beside each image containing its workflow settings and ComfyUI job ID.
 

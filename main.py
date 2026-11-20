@@ -29,13 +29,6 @@ async def generate_steps(tasks, end_goal, server, output):
         Object to be change: {", ".join(task.changed_objects) or "None"}
 
         Objects to preserve: {", ".join(task.unchanged_objects) or "None"}
-        
-        Instructions:
-        - Apply required change to previous image if previous image is present.
-        - Preserve all objects and details that are not affected by the required change.
-        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
-        - Show the completed result of the required change.
-        - Do not introduce objects or changes belonging to later steps.
         """.strip()
 
         # keep the prompts beside the images so they are easy to inspect
