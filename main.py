@@ -15,6 +15,10 @@ async def generate_steps(tasks, end_goal, server, output):
     previous_image = None
     prompts = []
 
+    negative_prompt = (
+        "text, words, letters, numbers, captions, labels, annotations, logos, watermark, signatures, typography"
+    )
+
     #comfyui requests run in worker threads while the chat loop uses asyncio
     for number, task in enumerate(tasks, start=1):
         # give the image model a specific change and the result it must show
@@ -30,12 +34,6 @@ async def generate_steps(tasks, end_goal, server, output):
 
         Objects to preserve: {", ".join(task.unchanged_objects) or "None"}
         
-        Instructions:
-        - Apply required change to previous image if previous image is present.
-        - Preserve all objects and details that are not affected by the required change.
-        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
-        - Show the completed result of the required change.
-        - Do not introduce objects or changes belonging to later steps.
         """.strip()
 
         # keep the prompts beside the images so they are easy to inspect
@@ -45,11 +43,11 @@ async def generate_steps(tasks, end_goal, server, output):
 
         if previous_image is None:
             # the first image needs only text
-            await asyncio.to_thread(generate_image, prompt, server, destination)
+            await asyncio.to_thread(generate_image, prompt, server, destination, negative_prompt=negative_prompt)
         else:
             # upload the last completed image and edit it using this step's prompt
             reference_image = await asyncio.to_thread(upload_reference, previous_image, server)
-            await asyncio.to_thread(generate_next_image, prompt, reference_image, server, destination)
+            await asyncio.to_thread(generate_next_image, prompt, reference_image, server, destination, negative_prompt=negative_prompt)
 
         # this result becomes the reference for the next step
         previous_image = destination
