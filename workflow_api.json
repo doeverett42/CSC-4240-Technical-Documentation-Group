@@ -16,7 +16,7 @@
   "63": {
     "class_type": "CFGGuider",
     "inputs": {
-      "cfg": 2.0,
+      "cfg": 7.0,
       "model": [
         "70",
         0
