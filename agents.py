@@ -63,5 +63,7 @@ def create_agent():
             "Identify objects affected by each action in changed_objects.",
             "Identify objects that should remain unchanged in unchanged_objects.",
             "Use consistent names for the same objects across steps.",
+            "Carry all previously completed changes into subsequent expected state descriptions.",
+            "DO NOT remove or replace previously added materials unless the currect action requires it."
         ]
     )

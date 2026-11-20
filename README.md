@@ -64,6 +64,8 @@ The program uses the chat agent's task list directly:
 2. Upload the completed image and use it with the next task's text in `workflow_edit_api.json`.
 3. Repeat with each newly generated image: image 2 uses image 1, image 3 uses image 2, and so on.
 
+Each edit uses the previous image's width and height, so the first image sets the dimensions for the whole run.
+
 Each prompt names the required change and describes the concrete result to show. The agent identifies the target and its new state, rather than using vague results such as "ready" or "done." This applies to physical tasks, diagrams, software, and interface instructions.
 
 Later images edit the previous result. The requested change takes priority over keeping the old arrangement; unaffected details and visual style remain consistent. Steps with no visible change retain their real instructions without inventing visual evidence of completion. Generated details may still vary.

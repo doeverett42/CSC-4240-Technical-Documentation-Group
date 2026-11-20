@@ -9,7 +9,7 @@
   },
   "63": {
     "class_type": "CFGGuider",
-    "inputs": {"cfg": 7.0, "model": ["70", 0], "positive": ["83", 0], "negative": ["84", 0]}
+    "inputs": {"cfg": 2.0, "model": ["70", 0], "positive": ["83", 0], "negative": ["84", 0]}
   },
   "64": {
     "class_type": "SamplerCustomAdvanced",
@@ -61,13 +61,9 @@
     "class_type": "LoadImage",
     "inputs": {"image": "reference.png"}
   },
-  "81": {
-    "class_type": "ImageScaleToTotalPixels",
-    "inputs": {"image": ["80", 0], "upscale_method": "lanczos", "megapixels": 1.0, "resolution_steps": 16}
-  },
   "82": {
     "class_type": "VAEEncode",
-    "inputs": {"pixels": ["81", 0], "vae": ["72", 0]}
+    "inputs": {"pixels": ["80", 0], "vae": ["72", 0]}
   },
   "83": {
     "class_type": "ReferenceLatent",
@@ -79,6 +75,6 @@
   },
   "85": {
     "class_type": "GetImageSize",
-    "inputs": {"image": ["81", 0]}
+    "inputs": {"image": ["80", 0]}
   }
 }
