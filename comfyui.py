@@ -9,17 +9,18 @@ from pathlib import Path, PurePosixPath
 import requests
 
 
-def generate_image(task, server, destination, negative_prompt=None):
-    # load the text-only workflow for the first image
-    workflow_file = Path(__file__).with_name("workflow_api.json")
+def _prepare_workflow(filename, task):
+    workflow_file = Path(__file__).with_name(filename)
     workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
 
-    # node 74 puts this step's result before the general drawing instructions
+    # choose a new seed and put the current step before the workflow instructions
+    workflow["73"]["inputs"]["noise_seed"] = random.randint(0, 2**32 - 1)
     workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
+    return workflow
 
-    if negative_prompt is not None:
-        workflow["67"]["inputs"]["text"] = negative_prompt
-        
+
+def generate_image(task, server, destination):
+    workflow = _prepare_workflow("workflow_api.json", task)
     send_workflow(workflow, server, destination)
 
 #upload a local image and return its filename on the comfyui server
@@ -46,23 +47,11 @@ def upload_reference(image, server):
     return str(PurePosixPath(uploaded.get("subfolder", "")) / uploaded["name"])
 
 
-def generate_next_image(task, reference_image, server, destination, negative_prompt=None):
-    # load the image-and-text workflow for every step after the first
-    workflow_file = Path(__file__).with_name("workflow_edit_api.json")
-    workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
+def generate_next_image(task, reference_image, server, destination):
+    workflow = _prepare_workflow("workflow_edit_api.json", task)
 
     # node 80 loads the uploaded previous image using its server filename
     workflow["80"]["inputs"]["image"] = reference_image
-
-    # use a new random seed for each image-editing call
-    workflow["73"]["inputs"]["noise_seed"] = random.randint(0, 2**32 - 1)
-
-    # put the actual change first; the workflow guidance preserves unaffected details
-    workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
-
-    if negative_prompt is not None:
-        workflow["67"]["inputs"]["text"] = negative_prompt
-
     send_workflow(workflow, server, destination)
 
 #queue either workflow, wait for its result, and save the image

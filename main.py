@@ -33,7 +33,6 @@ async def generate_steps(tasks, end_goal, server, output):
         Object to be change: {", ".join(task.changed_objects) or "None"}
 
         Objects to preserve: {", ".join(task.unchanged_objects) or "None"}
-        
         """.strip()
 
         # keep the prompts beside the images so they are easy to inspect
@@ -82,6 +81,9 @@ async def main():
     for number, task in enumerate(tasks, start=1):
         print(f"{number}. {task.action}")
         print(f"   expected: {task.expected_state}")
+        print(f"   unchanged objects: {task.unchanged_objects}")
+        print(f"   changed objects: {task.changed_objects}")
+    print(f"End Goal: {end_goal}")
 
     # ask for the image server after the conversation is complete
     server = input("comfyui address [http://127.0.0.1:8188]: ").strip()

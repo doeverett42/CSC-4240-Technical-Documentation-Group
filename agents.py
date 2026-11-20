@@ -13,7 +13,7 @@ class Task(BaseModel):
     expected_state: str
 
     changed_objects: list[str]
-    unchanged_objects: [str]
+    unchanged_objects: list[str]
 
 
 class ChatReply(BaseModel):
@@ -57,6 +57,6 @@ def create_agent():
             "Use end_goal to guide the planning of each task, but ensure that expectated_state only describes what exists after that task.",
             "Identify objects affected by each action in changed_objects.",
             "Identify objects that should remain unchanged in unchanged_objects.",
-            "Use consistent names for the same objects across steps.",
+            "Use consistent names for the same objects across steps."
         ]
     )
