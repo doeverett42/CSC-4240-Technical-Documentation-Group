@@ -15,6 +15,10 @@ async def generate_steps(tasks, end_goal, server, output):
     previous_image = None
     prompts = []
 
+    negative_prompt = (
+        "text, words, letters, numbers, captions, labels, annotations, logos, watermark, signatures, typography"
+    )
+
     #comfyui requests run in worker threads while the chat loop uses asyncio
     for number, task in enumerate(tasks, start=1):
         # give the image model a specific change and the result it must show
@@ -39,11 +43,11 @@ async def generate_steps(tasks, end_goal, server, output):
 
         if previous_image is None:
             # the first image needs only text
-            await asyncio.to_thread(generate_image, prompt, server, destination)
+            await asyncio.to_thread(generate_image, prompt, server, destination, negative_prompt=negative_prompt)
         else:
             # upload the last completed image and edit it using this step's prompt
             reference_image = await asyncio.to_thread(upload_reference, previous_image, server)
-            await asyncio.to_thread(generate_next_image, prompt, reference_image, server, destination)
+            await asyncio.to_thread(generate_next_image, prompt, reference_image, server, destination, negative_prompt=negative_prompt)
 
         # this result becomes the reference for the next step
         previous_image = destination
