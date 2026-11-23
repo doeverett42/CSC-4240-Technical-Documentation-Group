@@ -1,0 +1,105 @@
+Step 1
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Select a towel of appropriate size
+        
+        Scene shown after this action: Towel is long enough to fall past shoulders and wide enough to reach from nape of neck to hairline.
+
+        Objects to change: towel
+
+        Objects to preserve: None
+
+Step 2
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Blot hair with a soft towel
+        
+        Scene shown after this action: Hair is no longer dripping wet.
+
+        Objects to change: hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 3
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Untangle hair
+        
+        Scene shown after this action: Hair is detangled and ready for wrapping.
+
+        Objects to change: hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 4
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Flip hair over the head
+        
+        Scene shown after this action: All hair is hanging upside down in front of the face.
+
+        Objects to change: hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 5
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Wrap towel snugly around the head
+        
+        Scene shown after this action: Towel is snugly wrapped around the head with middle at nape of neck and sides adjusted equally.
+
+        Objects to change: towel, hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 6
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Twist towel around hair
+        
+        Scene shown after this action: Towel is twisted firmly around hair without causing damage.
+
+        Objects to change: towel, hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 7
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Secure the wrap on the head
+        
+        Scene shown after this action: Wrap is secured at the nape of the neck using clips or tucked into the opening.
+
+        Objects to change: towel
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 8
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Keep hair in the wrap for 30-60 minutes
+        
+        Scene shown after this action: Hair remains wrapped for sufficient time to absorb excess moisture.
+
+        Objects to change: hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
+
+Step 9
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Unwrap the hair
+        
+        Scene shown after this action: Hair is gently unwrapped and left loose in the towel to air dry the rest of the way.
+
+        Objects to change: towel, hair
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): To dry the hair using a towel wrap method effectively.
