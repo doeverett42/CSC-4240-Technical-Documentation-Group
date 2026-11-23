@@ -1,0 +1,11 @@
+Step 1
+Required change: Open the contacts app
+Result to show: The contacts app is launched and visible on the screen.
+
+Step 2
+Required change: Navigate to the police contact
+Result to show: The police contact is selected and displayed on the screen.
+
+Step 3
+Required change: Initiate the call
+Result to show: The phone is dialing the police number, and you are connected to the emergency line.

@@ -1,0 +1,120 @@
+Step 1
+Required action: Draw two circles for the front and back of the body.
+        
+        Scene shown after this action: Two circles on the paper: a large circle near the middle for the chest and shoulders, and a smaller circle to the left for the hips.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: front body circle, back body circle
+
+        Objects to preserve: None
+
+Step 2
+Required action: Draw a smaller circle and a rounded trapezoid for the head and snout.
+        
+        Scene shown after this action: A small circle above the largest body circle and a rounded trapezoid extending from the right side of the circle for the snout.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: head circle, snout
+
+        Objects to preserve: front body circle, back body circle
+
+Step 3
+Required action: Sketch curved lines connecting the head and body circles for the neck and body.
+        
+        Scene shown after this action: Curved lines connecting the bottom of the head to the far right of the large body circle and the top of the head to the top of the large body circle, with a curved line from the top of the large circle to the top of the smaller circle for the stomach.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: neck lines, stomach line
+
+        Objects to preserve: front body circle, back body circle, head circle, snout
+
+Step 4
+Required action: Sketch lines for the legs, including ankle joints and feet.
+        
+        Scene shown after this action: Four legs with straight lines extending from the center of the large body circle, angled backward and forward, with small dots for ankle joints and horizontal lines for feet.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: leg lines, ankle joints, feet
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line
+
+Step 5
+Required action: Sketch rounded tube shapes around the leg lines to bulk them up.
+        
+        Scene shown after this action: Curved lines on either side of the leg lines, creating rounded tube shapes for muscles, with three to four clawed toes on each foot.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: leg muscles, feet
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line, leg lines, ankle joints
+
+Step 6
+Required action: Draw a curved tail coming out from the back of the body.
+        
+        Scene shown after this action: A curved tail extending from the top of the medium-sized circle, narrowing as it extends to the left and ending in a point.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: tail
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line, leg lines, ankle joints, leg muscles, feet
+
+Step 7
+Required action: Sketch wing shapes with a base and top line.
+        
+        Scene shown after this action: Two wings with a base line extending from the neck and a top line angling toward the head, with a long curved horizontal line above the tail.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: wing lines
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line, leg lines, ankle joints, leg muscles, feet, tail
+
+Step 8
+Required action: Add webbing to connect the wings to the body.
+        
+        Scene shown after this action: Wavy lines connecting the tips of the wings to the body, with curved lines extending from the top corners of the wings to the wavy lines.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: wing webbing
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line, leg lines, ankle joints, leg muscles, feet, tail, wing lines
+
+Step 9
+Required action: Draw eyes, horns, and other features on the head.
+        
+        Scene shown after this action: Small circles for eyes near the top of the head, a bumpy brow ridge, a line for the mouth, and curved horns extending from the back of the head.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: eyes, horns, mouth, teeth
+
+        Objects to preserve: front body circle, back body circle, neck lines, stomach line, leg lines, ankle joints, leg muscles, feet, tail, wing lines, wing webbing
+
+Step 10
+Required action: Erase any unnecessary lines and clean up the drawing.
+        
+        Scene shown after this action: Clean and detailed lines for the dragon's body, head, legs, wings, and features, with no visible erased guidelines.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: guidelines
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line, leg lines, ankle joints, leg muscles, feet, tail, wing lines, wing webbing, eyes, horns, mouth, teeth
+
+Step 11
+Required action: Add scales to the dragon's body for texture.
+        
+        Scene shown after this action: Small curved or wavy lines inside the dragon's body to create a scale texture, with optional spikes along the back.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a dragon with a defined body, head, legs, wings, and features. 
+
+        Object to be change: scales
+
+        Objects to preserve: front body circle, back body circle, head circle, snout, neck lines, stomach line, leg lines, ankle joints, leg muscles, feet, tail, wing lines, wing webbing, eyes, horns, mouth, teeth

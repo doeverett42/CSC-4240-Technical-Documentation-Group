@@ -24,6 +24,7 @@ async def generate_steps(tasks, end_goal, server, output):
         # give the image model a specific change and the result it must show
         destination = output / f"step_{number}.png"
         prompt = f"""
+        DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
         Required action: {task.action}
         
         Scene shown after this action: {task.expected_state}

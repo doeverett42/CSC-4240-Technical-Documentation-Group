@@ -1,0 +1,7 @@
+Step 1
+Required change: Draw a circle with a slightly curved top that curves inward toward the center.
+Result to show: A circle with a wider top that has softer inward curves compared to the narrower bottom with sharper curves.
+
+Step 2
+Required change: Draw a small curved line at the top of the circle extending outward.
+Result to show: A stem is present at the top of the apple, proportional to the apple's size and attached where the top curves meet.

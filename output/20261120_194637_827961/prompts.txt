@@ -1,0 +1,11 @@
+Step 1
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Visualize or sketch two circles on top of an oval
+        
+        Scene shown after this action: Two circles sitting on top of an oval, lightly sketched and ready for outlining.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: oval, two circles
+
+        Objects to preserve: None

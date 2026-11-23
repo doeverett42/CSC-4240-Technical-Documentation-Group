@@ -9,18 +9,23 @@ from pathlib import Path, PurePosixPath
 import requests
 
 
-def _prepare_workflow(filename, task):
+def _prepare_workflow(filename, task, negative_prompt=None):
     workflow_file = Path(__file__).with_name(filename)
     workflow = json.loads(workflow_file.read_text(encoding="utf-8"))
 
     # choose a new seed and put the current step before the workflow instructions
     workflow["73"]["inputs"]["noise_seed"] = random.randint(0, 2**32 - 1)
     workflow["74"]["inputs"]["text"] = task + "\n\n" + workflow["74"]["inputs"]["text"]
+
+    # node 67 encodes the negative prompt in both workflows
+    if negative_prompt is not None:
+        workflow["67"]["inputs"]["text"] = negative_prompt
+
     return workflow
 
 
-def generate_image(task, server, destination):
-    workflow = _prepare_workflow("workflow_api.json", task)
+def generate_image(task, server, destination, negative_prompt=None):
+    workflow = _prepare_workflow("workflow_api.json", task, negative_prompt)
     send_workflow(workflow, server, destination)
 
 #upload a local image and return its filename on the comfyui server
@@ -47,8 +52,8 @@ def upload_reference(image, server):
     return str(PurePosixPath(uploaded.get("subfolder", "")) / uploaded["name"])
 
 
-def generate_next_image(task, reference_image, server, destination):
-    workflow = _prepare_workflow("workflow_edit_api.json", task)
+def generate_next_image(task, reference_image, server, destination, negative_prompt=None):
+    workflow = _prepare_workflow("workflow_edit_api.json", task, negative_prompt)
 
     # node 80 loads the uploaded previous image using its server filename
     workflow["80"]["inputs"]["image"] = reference_image

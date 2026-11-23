@@ -1,0 +1,19 @@
+Step 1
+Visual context: A square origami paper on a flat surface, showing diagonal and horizontal creases, with the final shape being a folded triangle.
+Required change: Place a square piece of paper on a flat surface
+Scene to show: The square paper is lying flat on the surface with all sides visible and edges aligned.
+
+Step 2
+Visual context: A square origami paper on a flat surface, showing diagonal and horizontal creases, with the final shape being a folded triangle.
+Required change: Fold and unfold the paper in half diagonally, twice
+Scene to show: The paper has two diagonal creases forming an 'X', with the original square shape still intact.
+
+Step 3
+Visual context: A square origami paper on a flat surface, showing diagonal and horizontal creases, with the final shape being a folded triangle.
+Required change: Flip the paper over and fold the bottom edge upward
+Scene to show: The paper is flipped, and the bottom edge is folded up to meet the top edge, creating a horizontal crease.
+
+Step 4
+Visual context: A square origami paper on a flat surface, showing diagonal and horizontal creases, with the final shape being a folded triangle.
+Required change: Collapse the square into a triangle along the creases
+Scene to show: The paper forms a triangular, tent-like shape with the two diagonal creases and one horizontal crease visible.
