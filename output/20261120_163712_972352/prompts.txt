@@ -1,0 +1,17 @@
+Step 1
+Required action: Prepare the sandwich
+        
+        Scene shown after this action: A sandwich with two slices of bread, peanut butter spread on one side, and jelly spread on the other.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A peanut butter and jelly sandwich 
+
+        Object to be change: Bread, Peanut butter, Jelly
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.

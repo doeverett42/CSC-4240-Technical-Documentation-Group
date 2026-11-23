@@ -1,0 +1,65 @@
+Step 1
+Required action: Place the square piece of paper on a flat surface
+        
+        Scene shown after this action: The paper is lying flat on the surface, ready for folding.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create a traditional origami shape using the provided steps. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+
+Step 2
+Required action: Fold and unfold the paper in half diagonally
+        
+        Scene shown after this action: A diagonal crease is formed from corner to corner.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create a traditional origami shape using the provided steps. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+
+Step 3
+Required action: Fold and unfold the paper in half diagonally again
+        
+        Scene shown after this action: A second diagonal crease is formed from the opposite corner to the opposite corner, creating an 'X' pattern.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create a traditional origami shape using the provided steps. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+
+Step 4
+Required action: Flip the paper over and fold the bottom edge upward
+        
+        Scene shown after this action: The bottom edge is folded up to the top edge, creating a horizontal crease.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create a traditional origami shape using the provided steps. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+
+Step 5
+Required action: Collapse the square into a triangle along the creases
+        
+        Scene shown after this action: The paper forms a triangular, tent-like shape with the horizontal crease at the bottom.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create a traditional origami shape using the provided steps. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+
+Step 6
+Required action: Flatten the tent-like shape along the existing creases
+        
+        Scene shown after this action: The paper is flattened into a diamond shape with all creases visible.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create a traditional origami shape using the provided steps. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None

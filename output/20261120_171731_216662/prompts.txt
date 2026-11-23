@@ -1,0 +1,43 @@
+Step 1
+Required action: Collect ingredients
+        
+        Scene shown after this action: Peanut butter, jelly, and bread are gathered and ready for use.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Assemble a peanut butter and jelly sandwich 
+
+        Object to be change: peanut butter, jelly, bread
+
+        Objects to preserve: None
+
+Step 2
+Required action: Spread peanut butter
+        
+        Scene shown after this action: Peanut butter is evenly spread on one side of the bread slice.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Assemble a peanut butter and jelly sandwich 
+
+        Object to be change: one slice of bread
+
+        Objects to preserve: jelly, other slice of bread
+
+Step 3
+Required action: Spread jelly
+        
+        Scene shown after this action: Jelly is evenly spread on one side of the other bread slice.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Assemble a peanut butter and jelly sandwich 
+
+        Object to be change: other slice of bread
+
+        Objects to preserve: peanut butter, first slice of bread
+
+Step 4
+Required action: Press bread slices together
+        
+        Scene shown after this action: The two slices of bread are pressed together with peanut butter and jelly in between, forming a complete sandwich.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Assemble a peanut butter and jelly sandwich 
+
+        Object to be change: both slices of bread
+
+        Objects to preserve: other ingredients

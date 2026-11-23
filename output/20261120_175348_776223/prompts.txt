@@ -1,0 +1,98 @@
+Step 1
+Required action: Select a towel that is the right size
+        
+        Scene shown after this action: A towel that is long enough to fall past your shoulders and wide enough to reach from the nape of your neck to your hairline.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: towel
+
+        Objects to preserve: None
+
+Step 2
+Required action: Blot your hair with a soft towel
+        
+        Scene shown after this action: Hair is no longer dripping wet.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: hair
+
+        Objects to preserve: towel
+
+Step 3
+Required action: Untangle your hair
+        
+        Scene shown after this action: Hair is detangled and ready for wrapping.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: hair
+
+        Objects to preserve: towel
+
+Step 4
+Required action: Flip your hair over your head
+        
+        Scene shown after this action: All hair is hanging upside down in front of your face.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: hair
+
+        Objects to preserve: towel
+
+Step 5
+Required action: Wrap the towel snugly around your head
+        
+        Scene shown after this action: Towel is snugly wrapped around your head with the middle at the nape of your neck.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: towel, head
+
+        Objects to preserve: hair
+
+Step 6
+Required action: Twist the towel around all of your hair
+        
+        Scene shown after this action: Towel is twisted around your hair, securing it firmly but not too tightly.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: towel, hair
+
+        Objects to preserve: head
+
+Step 7
+Required action: Secure the wrap on your head
+        
+        Scene shown after this action: Wrap is secured at the nape of your head using a clip or tuck.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: towel, head
+
+        Objects to preserve: hair
+
+Step 8
+Required action: Keep your hair in the towel wrap for 30-60 minutes
+        
+        Scene shown after this action: Hair remains wrapped and continues to dry as excess moisture is wicked away by the towel.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: hair
+
+        Objects to preserve: towel, head
+
+Step 9
+Required action: Unwrap the towel from your head
+        
+        Scene shown after this action: Towel is removed, and hair is loose but partially dry.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Dry hair using a towel wrap 
+
+        Object to be change: towel, hair
+
+        Objects to preserve: head

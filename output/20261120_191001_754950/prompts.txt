@@ -1,0 +1,76 @@
+Step 1
+Required action: draw a faint horizontal line between the center of the eyes
+        
+        Scene shown after this action: A small horizontal wrinkle line is drawn between the center points of where the eyes will be placed.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: frown wrinkle
+
+        Objects to preserve: rest of the face
+
+Step 2
+Required action: draw angled eyebrows extending from each side of the frown wrinkle
+        
+        Scene shown after this action: Two angled eyebrow lines are drawn, extending outward from the ends of the frown wrinkle, creating a slightly furrowed expression.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: eyebrows
+
+        Objects to preserve: frown wrinkle
+
+Step 3
+Required action: draw the eyes underneath each eyebrow and add a small nose
+        
+        Scene shown after this action: Two almond-shaped eyes are drawn beneath the eyebrows, with a small, button-like nose positioned centrally below the eyes.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: eyes, nose
+
+        Objects to preserve: eyebrows, frown wrinkle
+
+Step 4
+Required action: draw a crooked smile right beneath the nose
+        
+        Scene shown after this action: A slightly uneven smile line is drawn below the nose, curving slightly to one side to create a unique shape.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: mouth
+
+        Objects to preserve: eyes, nose, frown wrinkle, eyebrows
+
+Step 5
+Required action: add lines under the eyes for cheekbones and an indent under the smile for the chin
+        
+        Scene shown after this action: Two curved lines are drawn beneath each eye to form cheekbones, and a small indent is created below the smile to define the chin.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: cheekbones, chin
+
+        Objects to preserve: eyes, nose, frown wrinkle, eyebrows, mouth
+
+Step 6
+Required action: draw the outline of the head from the temples downward to a pointed chin
+        
+        Scene shown after this action: A continuous line is drawn from the temples, curving outward to form the sides of the head, and tapering to a pointed chin at the bottom.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: head outline
+
+        Objects to preserve: eyes, nose, frown wrinkle, eyebrows, mouth, cheekbones, chin
+
+Step 7
+Required action: add the ears and draw spiked, triangular-shaped hair around the head
+        
+        Scene shown after this action: Two small ear shapes are drawn on the sides of the head, and a series of spiked, triangular lines are drawn around the top of the head to create a unique hairstyle.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A realistic pencil drawing of a character with specific facial features and hairstyle. 
+
+        Object to be change: ears, hair
+
+        Objects to preserve: head outline, eyes, nose, frown wrinkle, eyebrows, mouth, cheekbones, chin

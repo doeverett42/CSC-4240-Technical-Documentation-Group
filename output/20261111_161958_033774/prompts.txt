@@ -1,0 +1,11 @@
+Step 1
+Required change: Open the contacts app
+Result to show: The contacts app is displayed on the screen.
+
+Step 2
+Required change: Press '9' on the keypad
+Result to show: The '9' key is pressed, navigating or selecting an option.
+
+Step 3
+Required change: Press '1' on the keypad
+Result to show: The '1' key is pressed, navigating or selecting another option.

@@ -1,0 +1,11 @@
+Step 1
+Required change: Wrap the end of the rope around the pole under the long end
+Result to show: The end of the rope is wrapped under the long end around the pole
+
+Step 2
+Required change: Cross the same end over the standing end and wrap it around the pole again
+Result to show: The end is now over the standing end and wrapped around the pole
+
+Step 3
+Required change: Slide the end under itself to be parallel with the standing end
+Result to show: The end is parallel to the standing end

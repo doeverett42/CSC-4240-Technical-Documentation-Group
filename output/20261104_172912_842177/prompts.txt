@@ -1,0 +1,19 @@
+Step 1
+Action: gather ingredients
+Expected result: bread, peanut butter, and jelly are ready
+
+Step 2
+Action: prepare bread
+Expected result: bread slices are ready for spreading
+
+Step 3
+Action: spread peanut butter
+Expected result: peanut butter is spread on one slice
+
+Step 4
+Action: spread jelly
+Expected result: jelly is spread on the other slice
+
+Step 5
+Action: assemble sandwich
+Expected result: sandwich is ready to serve

@@ -1,0 +1,47 @@
+Step 1
+Required change: Wrap the end of the rope around the pole
+        
+        Result to show: The end is under the long end of the rope
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 2
+Required change: Cross the same end over the standing end and wrap around the pole
+        
+        Result to show: The end crosses over the standing end
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 3
+Required change: Slide the end under itself
+        
+        Result to show: The end is parallel to the standing end
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 4
+Required change: Pull both ends tight
+        
+        Result to show: The knot is secure
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.

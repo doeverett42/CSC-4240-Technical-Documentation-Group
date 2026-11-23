@@ -1,0 +1,15 @@
+Step 1
+Required change: Wrap the end of the rope around the pole under the long end
+Result to show: The end is under the long end of the rope
+
+Step 2
+Required change: Cross the same end over the standing end and wrap it around the pole again
+Result to show: The end crosses over the standing end
+
+Step 3
+Required change: Slide the end under itself
+Result to show: The end is parallel to the standing end
+
+Step 4
+Required change: Pull both ends of the rope tight
+Result to show: The knot is secure and tight

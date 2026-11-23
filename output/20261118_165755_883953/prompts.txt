@@ -1,0 +1,71 @@
+Step 1
+Required action: Gather Ingredients
+        
+        Scene shown after this action: All necessary ingredients are collected and ready for use.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A peanut butter and jelly sandwich made with two slices of bread, peanut butter, and jelly. 
+
+        Object to be change: peanut butter, jelly, bread
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 2
+Required action: Spread Peanut Butter
+        
+        Scene shown after this action: One side of one bread slice is evenly coated with peanut butter.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A peanut butter and jelly sandwich made with two slices of bread, peanut butter, and jelly. 
+
+        Object to be change: one slice of bread
+
+        Objects to preserve: jelly, other slice of bread
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 3
+Required action: Spread Jelly
+        
+        Scene shown after this action: One side of the other bread slice is evenly coated with jelly.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A peanut butter and jelly sandwich made with two slices of bread, peanut butter, and jelly. 
+
+        Object to be change: one slice of bread
+
+        Objects to preserve: peanut butter, other slice of bread
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 4
+Required action: Assemble Sandwich
+        
+        Scene shown after this action: The two slices of bread are pressed together, creating a sandwich with peanut butter and jelly.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A peanut butter and jelly sandwich made with two slices of bread, peanut butter, and jelly. 
+
+        Object to be change: two slices of bread
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.

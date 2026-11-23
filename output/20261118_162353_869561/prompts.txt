@@ -1,0 +1,107 @@
+Step 1
+Required action: Place a square piece of paper on a flat surface
+        
+        Scene shown after this action: The square paper is lying flat on the surface with all sides visible and aligned.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create an origami shape by following the provided instructions. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 2
+Required action: Fold and unfold the paper in half diagonally
+        
+        Scene shown after this action: The paper has a crease running diagonally from one corner to the opposite corner.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create an origami shape by following the provided instructions. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 3
+Required action: Fold and unfold the paper in half diagonally again
+        
+        Scene shown after this action: The paper now has two diagonal creases forming an 'X' across the square.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create an origami shape by following the provided instructions. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 4
+Required action: Flip the paper over
+        
+        Scene shown after this action: The paper is now lying on the surface with the opposite side facing up.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create an origami shape by following the provided instructions. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 5
+Required action: Fold and unfold the bottom edge upward
+        
+        Scene shown after this action: The paper has a horizontal crease running across the middle of the square.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create an origami shape by following the provided instructions. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.
+
+Step 6
+Required action: Collapse the square into a triangle along the creases
+        
+        Scene shown after this action: The paper is folded into a triangular shape with the creases forming the edges of the triangle.
+
+        Overall end goal (USE ONLY FOR CONTEXT): Create an origami shape by following the provided instructions. 
+
+        Object to be change: Square piece of paper
+
+        Objects to preserve: None
+        
+        Instructions:
+        - Apply required change to previous image if previous image is present.
+        - Preserve all objects and details that are not affected by the required change.
+        - If previous image is given, maintain the same camera angle, background, and visual style unless required change needs it.
+        - Show the completed result of the required change.
+        - Do not introduce objects or changes belonging to later steps.

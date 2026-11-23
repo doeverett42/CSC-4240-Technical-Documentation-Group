@@ -1,0 +1,83 @@
+Step 1
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Visualize or sketch two circles on top of an oval
+        
+        Scene shown after this action: Two circles sitting on top of an oval, lightly sketched and ready for outlining.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: oval, two circles
+
+        Objects to preserve: None
+
+Step 2
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Draw an outline around the shapes
+        
+        Scene shown after this action: An oval with two lumps on top, forming the basic structure of the monkey's face and ears.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: oval, two circles
+
+        Objects to preserve: None
+
+Step 3
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Enclose the shape with a larger circle
+        
+        Scene shown after this action: A larger circular shape enclosing the previous drawing, forming the complete monkey's face.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: oval
+
+        Objects to preserve: two circles
+
+Step 4
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Draw two circles on each side of the face
+        
+        Scene shown after this action: Two small circles attached to each side of the face, representing the monkey's ears.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: face
+
+        Objects to preserve: oval, nose
+
+Step 5
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Draw a small oval in the center of the face
+        
+        Scene shown after this action: A small oval in the center of the face, serving as the monkey's nose.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: face
+
+        Objects to preserve: oval, ears
+
+Step 6
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Draw two small vertical lines slightly above the nose
+        
+        Scene shown after this action: Two vertical lines above the nose, forming the monkey's eyes.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: face
+
+        Objects to preserve: oval, ears, nose
+
+Step 7
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Draw the mouth below the eyes
+        
+        Scene shown after this action: A mouth drawn below the eyes, experimenting with different styles for expression.
+
+        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of a monkey's face with distinct features including eyes, nose, mouth, ears, and overall shape. 
+
+        Object to be change: face
+
+        Objects to preserve: oval, ears, nose, eyes
