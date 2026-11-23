@@ -28,13 +28,13 @@ async def generate_steps(tasks, end_goal, server, output):
         
         Scene shown after this action: {task.expected_state}
 
-        Object to be change: {", ".join(task.changed_objects) or "None"}
+        Objects to change: {", ".join(task.changed_objects) or "None"}
 
         Objects to preserve: {", ".join(task.unchanged_objects) or "None"}
         """.strip()
 
         if number > 1:
-            prompt += f"Overall end goal (USE ONLY FOR CONTEXT): {end_goal}"
+            prompt += f"\n\nOverall end goal (USE ONLY FOR CONTEXT): {end_goal}"
 
         # keep the prompts beside the images so they are easy to inspect
         prompts.append(f"Step {number}\n{prompt}")
