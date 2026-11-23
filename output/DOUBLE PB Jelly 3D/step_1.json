@@ -1,5 +1,5 @@
 {
-  "prompt_id": "b3f9cfa0-4326-488d-a5eb-0dbeac1ea02f",
+  "prompt_id": "edb5cecb-8eb9-483d-b55a-666f8889e939",
   "prompt": {
     "61": {
       "class_type": "KSamplerSelect",
@@ -92,7 +92,7 @@
     "73": {
       "class_type": "RandomNoise",
       "inputs": {
-        "noise_seed": 1917308428
+        "noise_seed": 3317095709
       }
     },
     "70": {
@@ -119,7 +119,7 @@
     "74": {
       "class_type": "CLIPTextEncode",
       "inputs": {
-        "text": "DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.\n        Required action: Draw a 3x3 grid of squares\n        \n        Scene shown after this action: A 3x3 grid with nine distinct squares, each clearly defined by lines.\n\n        Overall end goal (USE ONLY FOR CONTEXT): A completed game of tic-tac-toe on a 3x3 grid where either a player has won or the game is a draw. \n\n        Object to be change: Board\n\n        Objects to preserve: None\n\nCreate one clear, text-free instructional illustration or interface view showing the specified result. Make the target objects, components, or controls easy to distinguish and the result easy to inspect. Show only this step's resulting state, with an uncluttered setting appropriate to the task. Do not render any words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks anywhere in the image. Keep packaging, surfaces, and interfaces unlettered. Explain the step through shapes, positions, and visible changes. Follow the supplied details without adding future actions or inventing indicators of success.",
+        "text": "DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.\n        Required action: gather ingredients\n        \n        Scene shown after this action: All necessary ingredients are collected and ready for use.\n\n        Object to be change: peanut butter, jelly, bread\n\n        Objects to preserve: None\n\nCreate one clear, text-free instructional illustration or interface view showing the specified result. Make the target objects, components, or controls easy to distinguish and the result easy to inspect. Show only this step's resulting state, with an uncluttered setting appropriate to the task. Do not render any words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks anywhere in the image. Keep packaging, surfaces, and interfaces unlettered. Explain the step through shapes, positions, and visible changes. Follow the supplied details without adding future actions or inventing indicators of success.",
         "clip": [
           "71",
           0

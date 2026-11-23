@@ -1,5 +1,5 @@
 {
-  "prompt_id": "3bca727b-4d1f-4ecd-ab32-2181ed2e689e",
+  "prompt_id": "39e1258a-0c15-469b-b691-ee80f3fc02af",
   "prompt": {
     "61": {
       "class_type": "KSamplerSelect",
@@ -125,13 +125,13 @@
     "73": {
       "class_type": "RandomNoise",
       "inputs": {
-        "noise_seed": 4163748021
+        "noise_seed": 3416720371
       }
     },
     "74": {
       "class_type": "CLIPTextEncode",
       "inputs": {
-        "text": "DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.\n        Required action: Place the first symbol (X or O) in the center square\n        \n        Scene shown after this action: The center square contains either an 'X' or an 'O', depending on the player's choice.\n\n        Overall end goal (USE ONLY FOR CONTEXT): A completed game of tic-tac-toe on a 3x3 grid where either a player has won or the game is a draw. \n\n        Object to be change: Center square of the board\n\n        Objects to preserve: All other squares on the board\n\nShow the required change and result as a clearly different procedural state when the action has a visible effect. Change the affected objects, parts, connections, layout, or interface as needed; preserve only unaffected details and visual style. Prioritize the requested result over the previous arrangement. Remove any existing words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks from the reference. Do not render any new text anywhere in the image, including on packaging or interfaces. Explain the step through shapes, positions, and visible changes in one clear, text-free resulting view. Cosmetic variation alone does not count as completing a step. For nonvisual steps, retain the truthful observable state without inventing proof of success.",
+        "text": "DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.\n        Required action: assemble sandwich\n        \n        Scene shown after this action: The two slices of bread are pressed together, creating a complete sandwich with peanut butter and jelly.\n\n        Object to be change: both slices of bread\n\n        Objects to preserve: utensils, ingredients not usedOverall end goal (USE ONLY FOR CONTEXT): A complete peanut butter and jelly sandwich ready to eat\n\nShow the required change and result as a clearly different procedural state when the action has a visible effect. Change the affected objects, parts, connections, layout, or interface as needed; preserve only unaffected details and visual style. Prioritize the requested result over the previous arrangement. Remove any existing words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks from the reference. Do not render any new text anywhere in the image, including on packaging or interfaces. Explain the step through shapes, positions, and visible changes in one clear, text-free resulting view. Cosmetic variation alone does not count as completing a step. For nonvisual steps, retain the truthful observable state without inventing proof of success.",
         "clip": [
           "71",
           0
@@ -141,7 +141,7 @@
     "75": {
       "class_type": "SaveImage",
       "inputs": {
-        "filename_prefix": "instructions/step_2",
+        "filename_prefix": "instructions/step_4",
         "images": [
           "65",
           0
@@ -151,7 +151,7 @@
     "80": {
       "class_type": "LoadImage",
       "inputs": {
-        "image": "instructions/references/step_1 (26).png"
+        "image": "instructions/references/step_3 (21).png"
       }
     },
     "82": {
