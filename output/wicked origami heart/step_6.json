@@ -1,5 +1,5 @@
 {
-  "prompt_id": "3a38174a-b7e0-40f5-87f0-4fbb37e355e2",
+  "prompt_id": "158a9e6c-ad5c-4225-82f1-e9a0e3d66790",
   "prompt": {
     "61": {
       "class_type": "KSamplerSelect",
@@ -94,7 +94,7 @@
     "67": {
       "class_type": "CLIPTextEncode",
       "inputs": {
-        "text": "blurry, low detail, distorted anatomy, text, words, letters, numbers, labels, captions, annotations, typography, logos, signatures, watermarks",
+        "text": "text, words, letters, numbers, captions, labels, annotations, logos, watermark, signatures, typography",
         "clip": [
           "71",
           0
@@ -125,13 +125,13 @@
     "73": {
       "class_type": "RandomNoise",
       "inputs": {
-        "noise_seed": 1642529600
+        "noise_seed": 4219042822
       }
     },
     "74": {
       "class_type": "CLIPTextEncode",
       "inputs": {
-        "text": "Required action: Draw a small circle at the intersection of the two lines\n        \n        Scene shown after this action: A smaller circle (approximately 1/10 the size of the main circle) at the intersection of the two lines, positioned so the upper-right side aligns with the intersection point.\n\n        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of Mickey Mouse's head and face, following the provided step-by-step instructions. \n\n        Object to be change: Small circle\n\n        Objects to preserve: Main circle, Left intersecting lines\n\nShow the required change and result as a clearly different procedural state when the action has a visible effect. Change the affected objects, parts, connections, layout, or interface as needed; preserve only unaffected details and visual style. Prioritize the requested result over the previous arrangement. Remove any existing words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks from the reference. Do not render any new text anywhere in the image, including on packaging or interfaces. Explain the step through shapes, positions, and visible changes in one clear, text-free resulting view. Cosmetic variation alone does not count as completing a step. For nonvisual steps, retain the truthful observable state without inventing proof of success.",
+        "text": "DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.\n        Required action: fold_horizontal\n        \n        Scene shown after this action: The top part is folded down horizontally, crossing the intersection in the middle.\n\n        Objects to change: top part\n\n        Objects to preserve: bottom part\n\nOverall end goal (USE ONLY FOR CONTEXT): Create an origami airplane\n\nShow the required change and result as a clearly different procedural state when the action has a visible effect. Change the affected objects, parts, connections, layout, or interface as needed; preserve only unaffected details and visual style. Prioritize the requested result over the previous arrangement. Remove any existing words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks from the reference. Do not render any new text anywhere in the image, including on packaging or interfaces. Explain the step through shapes, positions, and visible changes in one clear, text-free resulting view. Cosmetic variation alone does not count as completing a step. For nonvisual steps, retain the truthful observable state without inventing proof of success.",
         "clip": [
           "71",
           0
@@ -141,7 +141,7 @@
     "75": {
       "class_type": "SaveImage",
       "inputs": {
-        "filename_prefix": "instructions/step_4",
+        "filename_prefix": "instructions/step_6",
         "images": [
           "65",
           0
@@ -151,7 +151,7 @@
     "80": {
       "class_type": "LoadImage",
       "inputs": {
-        "image": "instructions/references/step_3 (19).png"
+        "image": "instructions/references/step_5 (7).png"
       }
     },
     "82": {

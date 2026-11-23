@@ -1,0 +1,141 @@
+Step 1
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: select paper
+        
+        Scene shown after this action: A letter-size or A4 (or 6” x 6” origami paper) is selected and placed on the work surface with the white side facing up.
+
+        Objects to change: paper
+
+        Objects to preserve: None
+
+Step 2
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_top_right_corner
+        
+        Scene shown after this action: The top right corner is folded down to meet the left side, creating a diagonal crease.
+
+        Objects to change: top right corner
+
+        Objects to preserve: other parts of the paper
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 3
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_top_left_corner
+        
+        Scene shown after this action: The top left corner is folded down to meet the right side, creating a second diagonal crease.
+
+        Objects to change: top left corner
+
+        Objects to preserve: other parts of the paper
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 4
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_bottom_half
+        
+        Scene shown after this action: The bottom half of the paper is folded up to hide the white side, creating a horizontal crease.
+
+        Objects to change: bottom half
+
+        Objects to preserve: top half
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 5
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: unfold_top_half
+        
+        Scene shown after this action: The top half is unfolded, revealing two diagonal creases intersecting in the middle.
+
+        Objects to change: top half
+
+        Objects to preserve: bottom half
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 6
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_horizontal
+        
+        Scene shown after this action: The top part is folded down horizontally, crossing the intersection in the middle.
+
+        Objects to change: top part
+
+        Objects to preserve: bottom part
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 7
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_sides_in
+        
+        Scene shown after this action: The left and right sides are folded towards the center, creating a diamond shape.
+
+        Objects to change: left and right sides
+
+        Objects to preserve: top and bottom
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 8
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_bottom_corners
+        
+        Scene shown after this action: The bottom corners are folded up to meet the top point, aligning with the vertical center line.
+
+        Objects to change: bottom left and right corners
+
+        Objects to preserve: other parts
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 9
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_vertical
+        
+        Scene shown after this action: The paper is folded in half vertically, then unfolded and turned over.
+
+        Objects to change: entire paper
+
+        Objects to preserve: None
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 10
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: tuck_corners
+        
+        Scene shown after this action: The bottom corners are tucked into the triangular flap.
+
+        Objects to change: bottom corners
+
+        Objects to preserve: other parts
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 11
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: fold_top_flaps
+        
+        Scene shown after this action: The top flaps are folded down at an angle, creating a finished airplane shape.
+
+        Objects to change: top flaps
+
+        Objects to preserve: body of the airplane
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane
+
+Step 12
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: tuck_final_corners
+        
+        Scene shown after this action: The corners of the top flaps are tucked into the main body, completing the airplane.
+
+        Objects to change: corners of top flaps
+
+        Objects to preserve: other parts
+
+Overall end goal (USE ONLY FOR CONTEXT): Create an origami airplane

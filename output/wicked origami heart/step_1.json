@@ -1,5 +1,5 @@
 {
-  "prompt_id": "71bbc959-a374-4728-accc-48558ff6e8d3",
+  "prompt_id": "0b7721c0-7ff8-4324-8bc4-2485ad9e82e5",
   "prompt": {
     "61": {
       "class_type": "KSamplerSelect",
@@ -82,7 +82,7 @@
     "67": {
       "class_type": "CLIPTextEncode",
       "inputs": {
-        "text": "blurry, low detail, distorted anatomy, text, words, letters, numbers, labels, captions, annotations, typography, logos, signatures, watermarks",
+        "text": "text, words, letters, numbers, captions, labels, annotations, logos, watermark, signatures, typography",
         "clip": [
           "71",
           0
@@ -92,7 +92,7 @@
     "73": {
       "class_type": "RandomNoise",
       "inputs": {
-        "noise_seed": 2469139652
+        "noise_seed": 4016621802
       }
     },
     "70": {
@@ -119,7 +119,7 @@
     "74": {
       "class_type": "CLIPTextEncode",
       "inputs": {
-        "text": "Required action: Draw a perfect circle with a pencil\n        \n        Scene shown after this action: A perfectly round circle drawn on paper, which will serve as the main portion of Mickey\u2019s head.\n\n        Overall end goal (USE ONLY FOR CONTEXT): A detailed drawing of Mickey Mouse's head and face, following the provided step-by-step instructions. \n\n        Object to be change: Main circle\n\n        Objects to preserve: None\n\nCreate one clear, text-free instructional illustration or interface view showing the specified result. Make the target objects, components, or controls easy to distinguish and the result easy to inspect. Show only this step's resulting state, with an uncluttered setting appropriate to the task. Do not render any words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks anywhere in the image. Keep packaging, surfaces, and interfaces unlettered. Explain the step through shapes, positions, and visible changes. Follow the supplied details without adding future actions or inventing indicators of success.",
+        "text": "DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.\n        Required action: select paper\n        \n        Scene shown after this action: A letter-size or A4 (or 6\u201d x 6\u201d origami paper) is selected and placed on the work surface with the white side facing up.\n\n        Objects to change: paper\n\n        Objects to preserve: None\n\nCreate one clear, text-free instructional illustration or interface view showing the specified result. Make the target objects, components, or controls easy to distinguish and the result easy to inspect. Show only this step's resulting state, with an uncluttered setting appropriate to the task. Do not render any words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks anywhere in the image. Keep packaging, surfaces, and interfaces unlettered. Explain the step through shapes, positions, and visible changes. Follow the supplied details without adding future actions or inventing indicators of success.",
         "clip": [
           "71",
           0
