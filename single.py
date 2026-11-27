@@ -68,7 +68,7 @@ def main():
         server = "http://127.0.0.1:8188"
 
     #keep each run's images together without replacing earlier runs
-    output = Path(__file__).with_name("output") / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    output = Path(__file__).with_name("single-agent output") / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     output.mkdir(parents=True)
 
     #queue the steps one at a time; each one waits for the previous image to finish

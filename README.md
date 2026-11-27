@@ -1,96 +1,51 @@
 # Instructions to Images
 
-Describe a task, answer any questions from the chat agent, and generate an image for each step. The same agent creates the ordered task list. Ollama runs the agent, and ComfyUI generates the images.
+Generate an image for each step of a technical procedure with ComfyUI.
 
 ## Setup
 
-Install Python 3.11 or newer, Ollama, and a current version of ComfyUI.
+Install Python 3.12 and ComfyUI with FLUX.2 support. From the project folder on Windows, run the following.
 
-From the project folder, run these commands:
-
-```bash
+```powershell
 python -m venv .venv
-source .venv/Scripts/activate
-python -m pip install -r requirements.txt
-ollama pull deepseek-r1:14b
+./.venv/Scripts/python.exe -m pip install -r requirements.txt
 ```
 
-The planning agent uses the `deepseek-r1:14b` model in Ollama. The image workflow uses FLUX.2 Klein Base 9B with the Qwen3 8B text encoder.
+Place these files in the corresponding ComfyUI model directories, then start ComfyUI.
 
-Download these three files and place them in your ComfyUI model folders:
-
-| Model file | ComfyUI folder |
+| Model file | ComfyUI directory |
 | --- | --- |
 | `flux-2-klein-base-9b-fp8.safetensors` | `models/diffusion_models/` |
 | `qwen_3_8b_fp8mixed.safetensors` | `models/text_encoders/` |
 | `full_encoder_small_decoder.safetensors` | `models/vae/` |
 
-Use the models folder configured in your ComfyUI installation. Restart ComfyUI after adding the files. Their names must match the settings in both `workflow_api.json` and `workflow_edit_api.json`. Both workflows use the same models and built-in ComfyUI nodes.
+For multi-agent mode, also install and start Ollama, install BeeAI, and pull the planning model.
 
-## Activate the Virtual Environment
-
-In each new Git Bash terminal, open the project folder and activate the virtual environment:
-
-```bash
-source .venv/Scripts/activate
+```powershell
+./.venv/Scripts/python.exe -m pip install beeai-framework==0.1.80
+ollama pull deepseek-r1:14b
 ```
-
-You should see `(.venv)` at the beginning of the prompt. To leave the environment, run `deactivate`.
 
 ## Run
 
-**Start Ollama and ComfyUI locally before running this program.** Open ComfyUI Desktop and wait for its local server to be ready. Keep both services running while generating images; this program does not start them automatically.
+When prompted for the ComfyUI address, press Enter to use `http://127.0.0.1:8188` or enter your server URL. Both modes save a PNG and a matching workflow JSON file for each step.
 
-In the same terminal, with the virtual environment active, run:
+### Multi-agent mode
 
-```bash
-python main.py
+```powershell
+./.venv/Scripts/python.exe main.py
 ```
 
-1. Describe your task at the `you:` prompt.
-2. Answer the agent's questions until it produces a plan.
-3. At the ComfyUI address prompt, press Enter to use `http://127.0.0.1:8188`. If your local ComfyUI uses a different port, enter its address instead.
-4. Wait for the images to be saved under `output/<run time>/`.
+Describe your task and answer any follow-up questions. The Ollama agent creates an ordered plan. ComfyUI generates the first image from text and uses the previous image as a reference for each later step.
 
-Type `quit` or `exit` during the conversation to leave.
+Each run saves to `multi-agent output/<timestamp>/` and includes `prompts.txt`.
 
-You can also enter the address of ComfyUI running on another computer. That computer must have the image models installed and accept connections from your computer.
+### Single-agent mode
 
-## Consistent Images
+```powershell
+./.venv/Scripts/python.exe single.py
+```
 
-The program uses the chat agent's task list directly:
+Paste or type instructions numbered `1.`, `2.`, `3.` and press Enter on a blank line when finished. ComfyUI generates each image independently from its step.
 
-1. Generate the first image from text using `workflow_api.json`.
-2. Upload the completed image and use it with the next task's text in `workflow_edit_api.json`.
-3. Repeat with each newly generated image: image 2 uses image 1, image 3 uses image 2, and so on.
-
-Each edit uses the previous image's width and height, so the first image sets the dimensions for the whole run.
-
-Each prompt names the required change and describes the concrete result to show. The agent identifies the target and its new state, rather than using vague results such as "ready" or "done." This applies to physical tasks, diagrams, software, and interface instructions.
-
-Later images edit the previous result. The requested change takes priority over keeping the old arrangement; unaffected details and visual style remain consistent. Steps with no visible change retain their real instructions without inventing visual evidence of completion. Generated details may still vary.
-
-Images are instructed to contain no text, letters, numbers, labels, captions, logos, or watermarks, including on packaging and interfaces. Edits also remove existing writing from the reference image. Written procedure details stay in the instructions rather than appearing inside the images.
-
-The base drawing and editing instructions are stored in node `74` of the two API workflow files. `comfyui.py` puts the current step before those general instructions. You can tune the wording in the workflow files without changing the Python code.
-
-Both API workflows and both canvas workflows use Euler, 20 steps, and CFG 7. The Python app draws a random seed for every image, including the first image of each run, and saves it in the JSON file beside the image.
-
-Each run saves the images, `prompts.txt`, and a JSON file beside each image containing its workflow settings and ComfyUI job ID.
-
-## API Files and Canvas Workflows
-
-API JSON files contain the executable nodes and inputs that Python sends to ComfyUI. Canvas workflow JSON files also contain the layout, widgets, connections, and notes needed to display the graph in the editor.
-
-| Stage | API file used by Python |
-| --- | --- |
-| First image from text | `workflow_api.json` |
-| Edit the previous image | `workflow_edit_api.json` |
-
-## Project Files
-
-- `main.py`: Chats with the user, then generates an image for each task.
-- `agents.py`: Defines the single chat agent, its model, and the task format.
-- `comfyui.py`: Uploads the previous image, submits workflows, and downloads images.
-- `workflow_api.json`: Generates the first image from text.
-- `workflow_edit_api.json`: Takes a reference image and text to generate later steps.
+Each run saves to `single-agent output/<timestamp>/`.

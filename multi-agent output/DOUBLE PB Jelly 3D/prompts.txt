@@ -1,0 +1,39 @@
+Step 1
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: gather ingredients
+        
+        Scene shown after this action: All necessary ingredients are collected and ready for use.
+
+        Object to be change: peanut butter, jelly, bread
+
+        Objects to preserve: None
+
+Step 2
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: spread peanut butter
+        
+        Scene shown after this action: One side of one bread slice is evenly coated with peanut butter.
+
+        Object to be change: one slice of bread
+
+        Objects to preserve: peanut butter jar, jelly jar, other slice of breadOverall end goal (USE ONLY FOR CONTEXT): A complete peanut butter and jelly sandwich ready to eat
+
+Step 3
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: spread jelly
+        
+        Scene shown after this action: One side of the other bread slice is evenly coated with jelly.
+
+        Object to be change: one slice of bread
+
+        Objects to preserve: peanut butter jar, peanut butter knife, other slice of breadOverall end goal (USE ONLY FOR CONTEXT): A complete peanut butter and jelly sandwich ready to eat
+
+Step 4
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: assemble sandwich
+        
+        Scene shown after this action: The two slices of bread are pressed together, creating a complete sandwich with peanut butter and jelly.
+
+        Object to be change: both slices of bread
+
+        Objects to preserve: utensils, ingredients not usedOverall end goal (USE ONLY FOR CONTEXT): A complete peanut butter and jelly sandwich ready to eat
