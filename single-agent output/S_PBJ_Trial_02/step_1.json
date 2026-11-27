@@ -1,0 +1,140 @@
+{
+  "prompt_id": "e2fe6d0d-0914-47e2-9583-11109915b66d",
+  "prompt": {
+    "61": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "62": {
+      "class_type": "Flux2Scheduler",
+      "inputs": {
+        "steps": 60,
+        "width": 512,
+        "height": 512
+      }
+    },
+    "63": {
+      "class_type": "CFGGuider",
+      "inputs": {
+        "cfg": 7.0,
+        "model": [
+          "70",
+          0
+        ],
+        "positive": [
+          "74",
+          0
+        ],
+        "negative": [
+          "67",
+          0
+        ]
+      }
+    },
+    "64": {
+      "class_type": "SamplerCustomAdvanced",
+      "inputs": {
+        "noise": [
+          "73",
+          0
+        ],
+        "guider": [
+          "63",
+          0
+        ],
+        "sampler": [
+          "61",
+          0
+        ],
+        "sigmas": [
+          "62",
+          0
+        ],
+        "latent_image": [
+          "66",
+          0
+        ]
+      }
+    },
+    "65": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "64",
+          0
+        ],
+        "vae": [
+          "72",
+          0
+        ]
+      }
+    },
+    "66": {
+      "class_type": "EmptyFlux2LatentImage",
+      "inputs": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    "67": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "blurry, low detail, distorted anatomy, text, words, letters, numbers, labels, captions, annotations, typography, logos, signatures, watermarks",
+        "clip": [
+          "71",
+          0
+        ]
+      }
+    },
+    "73": {
+      "class_type": "RandomNoise",
+      "inputs": {
+        "noise_seed": 1766591937
+      }
+    },
+    "70": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "flux-2-klein-base-9b-fp8.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "71": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+        "type": "flux2",
+        "device": "default"
+      }
+    },
+    "72": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "full_encoder_small_decoder.safetensors"
+      }
+    },
+    "74": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "Collect your ingredients. You will want peanut butter, some preserves or jelly, and some bread. You may also want to grab some butter, as butter can enhance the flavor of the sandwich. There are lots of different kinds of bread and spreads to choose from, so you'll have to do a little experimenting to know what you like.\n\nCreate one clear, text-free instructional illustration or interface view showing the specified result. Make the target objects, components, or controls easy to distinguish and the result easy to inspect. Show only this step's resulting state, with an uncluttered setting appropriate to the task. Do not render any words, letters, numbers, labels, captions, annotations, logos, signatures, or watermarks anywhere in the image. Keep packaging, surfaces, and interfaces unlettered. Explain the step through shapes, positions, and visible changes. Follow the supplied details without adding future actions or inventing indicators of success.",
+        "clip": [
+          "71",
+          0
+        ]
+      }
+    },
+    "75": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "filename_prefix": "instructions/step_1",
+        "images": [
+          "65",
+          0
+        ]
+      }
+    }
+  }
+}
