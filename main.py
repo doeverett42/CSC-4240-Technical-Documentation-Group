@@ -93,7 +93,7 @@ async def main():
         server = "http://127.0.0.1:8188"
 
     # keep each run's images together without replacing earlier runs
-    output = Path(__file__).with_name("output") / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    output = Path(__file__).with_name("multi-agent output") / datetime.now().strftime("%Y%m%d_%H%M%S_%f")
 
     # use the chat agent's task list directly to generate the guide
     await generate_steps(tasks, end_goal, server, output)
