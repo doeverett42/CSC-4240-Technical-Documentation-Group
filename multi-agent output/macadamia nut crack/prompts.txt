@@ -1,0 +1,57 @@
+Step 1
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Gather tools
+        
+        Scene shown after this action: All necessary tools are assembled and ready for use.
+
+        Objects to change: Vise grip, Iron bar, Flat hammer
+
+        Objects to preserve: Workspace, Environment
+
+Step 2
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Set up workspace
+        
+        Scene shown after this action: Iron bar is securely placed on a sturdy surface, providing a stable work area.
+
+        Objects to change: Iron bar position
+
+        Objects to preserve: Tools, Vise grip
+
+Overall end goal (USE ONLY FOR CONTEXT): To crack open macadamia nuts using a makeshift nutcracker with a vise grip, iron bar, and flat hammer.
+
+Step 3
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Secure nut in vise
+        
+        Scene shown after this action: Macadamia nut is securely held in the vise grip with the seam facing upward.
+
+        Objects to change: Macadamia nut position
+
+        Objects to preserve: Iron bar, Hammer
+
+Overall end goal (USE ONLY FOR CONTEXT): To crack open macadamia nuts using a makeshift nutcracker with a vise grip, iron bar, and flat hammer.
+
+Step 4
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Position nut against bar
+        
+        Scene shown after this action: Nut is firmly positioned against the iron bar, ready for cracking.
+
+        Objects to change: Nut placement relative to bar
+
+        Objects to preserve: Vise grip, Hammer
+
+Overall end goal (USE ONLY FOR CONTEXT): To crack open macadamia nuts using a makeshift nutcracker with a vise grip, iron bar, and flat hammer.
+
+Step 5
+DO NOT DRAW END GOAL IMMEDIATELY, ONLY USE AS CONTEXT.
+        Required action: Crack nut with hammer
+        
+        Scene shown after this action: Macadamia nut is cracked open along the seam, exposing the kernel inside.
+
+        Objects to change: Nutshell state
+
+        Objects to preserve: Vise grip, Iron bar
+
+Overall end goal (USE ONLY FOR CONTEXT): To crack open macadamia nuts using a makeshift nutcracker with a vise grip, iron bar, and flat hammer.
